@@ -1,29 +1,27 @@
-"use client"
+"use client";
 
-import type React from "react"
-
-import { useState } from "react"
-import { motion } from "framer-motion"
+import type React from "react";
+import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
-  })
+  });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle form submission here
-    console.log(formData)
-    alert("Message sent! (This is a demo)")
-    setFormData({ name: "", email: "", message: "" })
-  }
+    e.preventDefault();
+    console.log(formData);
+    alert("Message sent! (This is a demo)");
+    setFormData({ name: "", email: "", message: "" });
+  };
 
   return (
     <section id="contact" className="py-20 relative">
@@ -40,8 +38,8 @@ export default function Contact() {
           <h2 className="text-3xl font-bold mb-8 text-center">Contact</h2>
 
           <p className="text-center text-gray-300 mb-12">
-            I'm currently looking to join a more cross-functional team that values improving people's lives
-            <br /> through accessible design. Let's talk if you're hiring!
+            I&apos;m currently looking to join a more cross-functional team that values improving people&apos;s lives
+            <br /> through accessible design. Let&apos;s talk if you&apos;re hiring!
           </p>
 
           <div className="text-center mb-8">
@@ -135,6 +133,5 @@ export default function Contact() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
-
