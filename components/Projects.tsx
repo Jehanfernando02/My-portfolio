@@ -35,7 +35,7 @@ export default function Projects() {
       title: "Imperial Fit",
       description:
         "A next-generation fitness platform designed to provide users with personalized workout plans, progress tracking, and an interactive shopping experience for fitness gear. With Imperial Fit, users can access expert fitness programs, book training sessions, and manage their fitness journey seamlessly.",
-      image: "/assets/imperial.webp",
+      image: "/assets/Imperial.png",
       category: "Individual Project",
       details:
         "Imperial Fit is a comprehensive fitness ecosystem that brings together workout planning, progress tracking, and a seamless shopping experience. Users can explore tailored fitness programs, receive expert guidance, track their progress in real-time, and purchase gym essentials—all within a single platform.",
