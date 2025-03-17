@@ -41,8 +41,7 @@ export default function Contact() {
 
           <p className="text-center text-gray-300 mb-12">
             I'm currently looking to join a more cross-functional team that values improving people's lives
-            <br />
-            through accessible design. Let's talk if you're hiring!
+            <br /> through accessible design. Let's talk if you're hiring!
           </p>
 
           <div className="text-center mb-8">

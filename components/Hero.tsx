@@ -5,7 +5,7 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 
 export default function Hero() {
-  const containerRef = useRef<HTMLDivElement>(null)
+  // const containerRef = useRef<HTMLDivElement>(null)
 
   // Animation variants for smoother transitions
   const textVariants = {
@@ -39,8 +39,7 @@ export default function Hero() {
             variants={textVariants}
             initial="hidden"
             animate="visible"
-            className="w-full lg:w-3/5 space-y-6 text-center lg:text-left"
-          >
+            className="w-full lg:w-3/5 space-y-6 text-center lg:text-left">
            <div className="inline-block px-3 py-1 bg-purple-800/20 rounded-full text-base sm:text-lg text-purple-200 border border-purple-600/30 shadow-sm">
   Hello, I'm
 </div>
