@@ -1,12 +1,9 @@
 "use client"
 
-import { useRef } from "react"
 import Image from "next/image"
 import { motion } from "framer-motion"
 
 export default function Hero() {
-  // const containerRef = useRef<HTMLDivElement>(null)
-
   // Animation variants for smoother transitions
   const textVariants = {
     hidden: { opacity: 0, x: -50 },
@@ -40,20 +37,20 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
             className="w-full lg:w-3/5 space-y-6 text-center lg:text-left">
-           <div className="inline-block px-3 py-1 bg-purple-800/20 rounded-full text-base sm:text-lg text-purple-200 border border-purple-600/30 shadow-sm">
-  Hello, I'm
-</div>
+            <div className="inline-block px-3 py-1 bg-purple-800/20 rounded-full text-base sm:text-lg text-purple-200 border border-purple-600/30 shadow-sm">
+              Hello, I&apos;m
+            </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white drop-shadow-md">
               Jehan Fernando
             </h1>
 
             <p className="text-gray-300 text-base sm:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
-              I’m a second-year undergraduate at the Informatics Institute of Technology, affiliated with the University of Westminster, UK. Passionate about Full Stack Development, I’m constantly expanding my knowledge in modern programming languages and frameworks, turning ideas into powerful digital solutions with the MERN stack (React, Node.js, MongoDB) and beyond—think Java, Python, MySQL, and Spring Boot.
+              I&apos;m a second-year undergraduate at the Informatics Institute of Technology, affiliated with the University of Westminster, UK. Passionate about Full Stack Development, I&apos;m constantly expanding my knowledge in modern programming languages and frameworks, turning ideas into powerful digital solutions with the MERN stack (React, Node.js, MongoDB) and beyond—think Java, Python, MySQL, and Spring Boot.
             </p>
 
             <p className="text-gray-300 text-base sm:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
-              Armed with a knack for data structures, algorithms, and OOP, I craft seamless RESTful APIs using Mongoose and Postman, while diving into Flutter for cross-platform mobile magic. But it’s not just code—I bring leadership, adaptability, and a collaborative spirit to every project. Ready to innovate and inspire? Let’s build something extraordinary together!
+              Armed with a knack for data structures, algorithms, and OOP, I craft seamless RESTful APIs using Mongoose and Postman, while diving into Flutter for cross-platform mobile magic. But it&apos;s not just code—I bring leadership, adaptability, and a collaborative spirit to every project. Ready to innovate and inspire? Let&apos;s build something extraordinary together!
             </p>
           </motion.div>
 
