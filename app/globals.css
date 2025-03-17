@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #8a2be2;
+  --primary-glow: rgba(138, 43, 226, 0.35);
+  --background: #0a0118;
+  --card-background: rgba(30, 10, 60, 0.4);
+}
+
+body {
+  background-color: var(--background);
+  color: white;
+  overflow-x: hidden;
+}
+
+.glow-text {
+  text-shadow: 0 0 10px var(--primary-glow);
+}
+
+.glow-border {
+  box-shadow: 0 0 15px var(--primary-glow);
+}
+
+.glow-image {
+  filter: drop-shadow(0 0 8px var(--primary-glow));
+}
+
+.card {
+  background-color: var(--card-background);
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(138, 43, 226, 0.2);
+}
+
+.gradient-border {
+  position: relative;
+}
+
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(45deg, var(--primary), transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.hero-glow {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--primary-glow) 0%, rgba(138, 43, 226, 0) 70%);
+  z-index: -1;
+  filter: blur(30px);
+}
+
