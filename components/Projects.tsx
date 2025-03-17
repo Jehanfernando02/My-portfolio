@@ -10,34 +10,69 @@ interface Project {
   description: string
   image: string
   category: string
+  details?: string
+  technologies?: string[]
 }
 
 export default function Projects() {
-  const [selectedId, setSelectedId] = useState<number | null>(null)
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null)
 
   const projects: Project[] = [
     {
       id: 1,
-      title: "Example Project",
+      title: "We Neighbour",
       description:
-        "A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.",
-      image: "/placeholder.svg?height=400&width=600",
+        "A digital platform designed to enhance communication, security, and engagement in apartment communities. Residents can share resources, receive real-time safety alerts, manage visitor access with QR codes, book amenities, and stay updated with community announcements—all in one seamless app.",
+      image: "/assets/neighbour.webp",
+      category: "Ongoing Group Project",
+      details:
+        "We-Neighbour is a smart community management platform designed to improve communication, security, and engagement in apartment living. It provides features such as real-time safety alerts, QR code visitor management, a community forum, and a resource-sharing system to enhance daily interactions.",
+      technologies: ["Flutter", "Node.js", "MongoDB", "AWS", "Firebase", "QR Code API", "Google Calendar API"],
+    },  
+    
+    {
+      id: 2,
+      title: "Imperial Fit",
+      description:
+        "A next-generation fitness platform designed to provide users with personalized workout plans, progress tracking, and an interactive shopping experience for fitness gear. With Imperial Fit, users can access expert fitness programs, book training sessions, and manage their fitness journey seamlessly.",
+      image: "/assets/imperial.webp",
+      category: "Individual Project",
+      details:
+        "Imperial Fit is a comprehensive fitness ecosystem that brings together workout planning, progress tracking, and a seamless shopping experience. Users can explore tailored fitness programs, receive expert guidance, track their progress in real-time, and purchase gym essentials—all within a single platform.",
+      technologies: ["React", "Node.js", "MongoDB", "Express", "TailwindCSS", "Firebase", "Stripe API"],
+    },
+  
+    {
+      "id": 3,
+      "title": "Dream Space",
+      "description": 
+        "A modern property search application designed to help users find their ideal homes with ease. Dream Space offers advanced search filtering, detailed property pages, Google Maps integration for location insights, and a user-friendly favorites list to save properties.",
+      "image": "/assets/dream.png",
+      "category": "Individual Project",
+      "details": 
+        "Dream Space is a feature-rich real estate platform that simplifies property discovery. Users can filter properties by type, price, bedrooms, date added, and postcode area, view high-quality images, check floor plans, and explore locations using interactive Google Maps. With a sleek, responsive UI, it ensures a smooth browsing experience across all devices.",
+      "technologies": ["React", "Google Maps API", "React Router", "CSS (Flexbox, Grid)", "JSON Data Handling", "UI Libraries"]
+    },
+    {
+      id: 4,
+      title: "Example Project 3",
+      description:
+        "A fitness tracking app that integrates with wearable devices to monitor activity levels and provide workout recommendations.",
+      image: "/placeholder.svg?height=300&width=400",
       category: "Featured Project",
     },
     {
-      id: 2,
-      title: "Example Project",
+      id: 5,
+      title: "Example Project 4",
       description:
-        "A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.",
-      image: "/placeholder.svg?height=400&width=600",
+        "An AI chatbot for automated customer support, designed to handle inquiries and provide instant responses.",
+      image: "/placeholder.svg?height=300&width=400",
       category: "Featured Project",
     },
   ]
 
   return (
     <section id="projects" className="py-20 relative">
-      <div className="hero-glow absolute top-1/2 left-1/4"></div>
-
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -47,26 +82,35 @@ export default function Projects() {
         >
           <h2 className="text-3xl font-bold mb-12 text-center">Projects</h2>
 
-          <div className="space-y-32">
-            {projects.map((project, index) => (
+          {/* Grid layout for 3 projects per row */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project) => (
               <motion.div
                 key={project.id}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
+                transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className={`flex flex-col ${
-                  index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                } gap-8 items-center`}
+                className="bg-[#1a1a2e] p-4 rounded-lg shadow-lg flex flex-col items-center text-center"
               >
-                <div className="w-full md:w-1/2">
-                  <div className="text-sm text-purple-400 mb-2">{project.category}</div>
-                  <h3 className="text-2xl font-bold mb-4">{project.title}</h3>
-                  <p className="text-gray-300 mb-6">{project.description}</p>
+                <div className="relative overflow-hidden rounded-lg gradient-border">
+                  <Image
+                    src={project.image || "/placeholder.svg"}
+                    alt={project.title}
+                    width={400}
+                    height={300}
+                    className="w-full h-auto rounded-md"
+                  />
+                </div>
 
-                  <div className="flex gap-4">
+                <div className="mt-4">
+                  <div className="text-sm text-purple-400 mb-2">{project.category}</div>
+                  <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                  <p className="text-gray-300 text-sm mb-4">{project.description}</p>
+
+                  <div className="flex justify-center gap-4">
                     <button
-                      onClick={() => setSelectedId(project.id)}
+                      onClick={() => setSelectedProject(project)}
                       className="px-4 py-2 bg-purple-500/20 hover:bg-purple-500/30 rounded-md transition-colors text-white"
                     >
                       View Details
@@ -79,22 +123,6 @@ export default function Projects() {
                     </a>
                   </div>
                 </div>
-
-                <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                  className="w-full md:w-1/2"
-                >
-                  <div className="relative overflow-hidden rounded-lg gradient-border">
-                    <Image
-                      src={project.image || "/placeholder.svg"}
-                      alt={project.title}
-                      width={600}
-                      height={400}
-                      className="w-full h-auto"
-                    />
-                  </div>
-                </motion.div>
               </motion.div>
             ))}
           </div>
@@ -102,13 +130,13 @@ export default function Projects() {
       </div>
 
       <AnimatePresence>
-        {selectedId && (
+        {selectedProject && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
-            onClick={() => setSelectedId(null)}
+            onClick={() => setSelectedProject(null)}
           >
             <motion.div
               initial={{ scale: 0.8 }}
@@ -118,8 +146,8 @@ export default function Projects() {
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex justify-between items-start mb-4">
-                <h3 className="text-2xl font-bold">Project Details</h3>
-                <button onClick={() => setSelectedId(null)} className="text-gray-400 hover:text-white">
+                <h3 className="text-2xl font-bold">{selectedProject.title}</h3>
+                <button onClick={() => setSelectedProject(null)} className="text-gray-400 hover:text-white">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -134,8 +162,8 @@ export default function Projects() {
 
               <div className="mb-6">
                 <Image
-                  src="/placeholder.svg?height=400&width=800"
-                  alt="Project Detail"
+                  src={selectedProject.image || "/placeholder.svg?height=400&width=800"}
+                  alt={selectedProject.title}
                   width={800}
                   height={400}
                   className="w-full h-auto rounded-lg"
@@ -143,22 +171,21 @@ export default function Projects() {
               </div>
 
               <div className="space-y-4">
-                <h4 className="text-xl font-semibold">Example Project</h4>
-                <p className="text-gray-300">
-                  This is a detailed description of the project. It includes information about the technologies used,
-                  challenges faced, and solutions implemented. You can replace this text with your own project details.
-                </p>
+                <h4 className="text-xl font-semibold">{selectedProject.title}</h4>
+                <p className="text-gray-300">{selectedProject.details}</p>
 
-                <div>
-                  <h5 className="text-lg font-semibold mb-2">Technologies Used</h5>
-                  <div className="flex flex-wrap gap-2">
-                    {["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"].map((tech) => (
-                      <span key={tech} className="px-3 py-1 bg-purple-500/20 rounded-full text-sm">
-                        {tech}
-                      </span>
-                    ))}
+                {selectedProject.technologies && (
+                  <div>
+                    <h5 className="text-lg font-semibold mb-2">Technologies Used</h5>
+                    <div className="flex flex-wrap gap-2">
+                      {selectedProject.technologies.map((tech) => (
+                        <span key={tech} className="px-3 py-1 bg-purple-500/20 rounded-full text-sm">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                </div>
+                )}
 
                 <div className="pt-4 flex gap-4">
                   <a
@@ -182,4 +209,3 @@ export default function Projects() {
     </section>
   )
 }
-
