@@ -54,13 +54,17 @@ export default function Projects() {
       "technologies": ["React", "Google Maps API", "React Router", "CSS (Flexbox, Grid)", "JSON Data Handling", "UI Libraries"]
     },
     {
-      id: 4,
-      title: "Example Project 3",
-      description:
-        "A fitness tracking app that integrates with wearable devices to monitor activity levels and provide workout recommendations.",
-      image: "/placeholder.svg?height=300&width=400",
-      category: "Featured Project",
+      "id": 4,
+      "title": "Trello Clone",
+      "description": 
+        "A task management application inspired by Trello, allowing users to organize and track their work efficiently. It features draggable task cards, customizable boards, real-time updates, and a collaborative workflow.",
+      "image": "/assets/trello-clone.png",
+      "category": "Individual Project",
+      "details": 
+        "This Trello Clone provides an intuitive way to manage tasks using boards, lists, and draggable cards. Users can create new boards, add task lists, move tasks between lists via drag-and-drop, and track their progress visually. The app supports local storage for persistence and ensures a responsive user experience across devices.",
+      "technologies": ["React", "React DnD", "Redux", "Tailwind CSS", "Local Storage", "Context API"]
     },
+    
     {
       id: 5,
       title: "Example Project 4",
