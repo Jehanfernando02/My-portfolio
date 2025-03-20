@@ -1,135 +1,173 @@
 "use client";
 
-import type React from "react";
-import { useState } from "react";
-import { motion } from "framer-motion";
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const formRef = useRef<HTMLFormElement>(null);
+  const [messageSent, setMessageSent] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(formData);
-    alert("Message sent! (This is a demo)");
-    setFormData({ name: "", email: "", message: "" });
+
+    if (formRef.current) {
+      emailjs
+        .sendForm(
+          "service_r5474wa",
+          "template_83g8o88",
+          formRef.current,
+          "Pjc44CHoEK9xSOuFo"
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+            setMessageSent(true);
+            formRef.current?.reset();
+            setTimeout(() => setMessageSent(false), 3000);
+          },
+          (error) => {
+            console.log(error.text);
+            alert("Failed to send message. Please try again.");
+          }
+        );
+    }
   };
 
   return (
-    <section id="contact" className="py-20 relative">
-      <div className="hero-glow absolute bottom-1/3 left-1/3"></div>
+    <section
+      id="contact"
+      className="py-20 relative overflow-hidden bg-gradient-to-br from-black via-purple-950 to-indigo-900"
+    >
+      {/* Consistent Background Glow */}
+      <div className="absolute inset-0 hero-glow opacity-40 scale-150 bg-gradient-to-br from-purple-600/30 via-pink-500/20 to-teal-500/30"></div>
 
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="max-w-3xl mx-auto"
+          className="max-w-3xl mx-auto space-y-12"
         >
-          <h2 className="text-3xl font-bold mb-8 text-center">Contact</h2>
+          <h1 className="text-5xl font-extrabold mb-10 text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-teal-400 glow-text tracking-tight">
+            Get in Touch
+          </h1>
 
-          <p className="text-center text-gray-300 mb-12">
-            I&apos;m currently looking to join a more cross-functional team that values improving people&apos;s lives
-            <br /> through accessible design. Let&apos;s talk if you&apos;re hiring!
+          <p className="text-center text-gray-200 mb-12 text-lg leading-relaxed glow-text">
+            I’m excited to collaborate on projects that drive innovation and impact.
+            <br />
+            Let’s connect and create something extraordinary!
           </p>
 
-          <div className="text-center mb-8">
-            <a href="mailto:thisisanemail@example.com" className="text-purple-400 hover:underline">
-              thisisanemail@example.com
-            </a>
+          {/* Social Links */}
+          <div className="flex justify-center gap-8 mb-12">
+            <motion.a
+              href="https://www.linkedin.com/in/jehan-fernando-/"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.2, rotate: 5, boxShadow: "0 0 15px rgba(168, 85, 247, 0.8)" }}
+              className="flex items-center gap-2 text-white glow-text"
+            >
+              <Image src="/assets/linkedin.webp" alt="LinkedIn" width={32} height={32} />
+              <span>LinkedIn</span>
+            </motion.a>
+            <motion.a
+              href="https://github.com/Jehanfernando02/"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.2, rotate: 5, boxShadow: "0 0 15px rgba(168, 85, 247, 0.8)" }}
+              className="flex items-center gap-2 text-white glow-text"
+            >
+              <Image src="/assets/github.png" alt="GitHub" width={32} height={32} />
+              <span>GitHub</span>
+            </motion.a>
           </div>
 
-          <div className="flex justify-center gap-4 mb-12">
-            {["github", "twitter", "linkedin"].map((platform) => (
-              <motion.a
-                key={platform}
-                href="#"
-                whileHover={{ y: -3 }}
-                className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white transition-colors"
-              >
-                <span className="sr-only">{platform}</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  className="w-4 h-4"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101"
-                  />
-                </svg>
-              </motion.a>
-            ))}
-          </div>
-
-          <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Form */}
+          <form
+            ref={formRef}
+            onSubmit={sendEmail}
+            className="bg-[#1a1a2e]/80 p-6 md:p-8 rounded-xl shadow-lg max-w-lg mx-auto space-y-6 glow-border"
+          >
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">
+              <label
+                htmlFor="name"
+                className="block text-sm font-medium text-gray-200 mb-2 glow-text"
+              >
                 Name
               </label>
-              <input
+              <motion.input
                 type="text"
                 id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
+                name="user_name"
+                whileFocus={{ borderColor: "#A855F7" }}
+                className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-white bg-[#0f071a]/80 shadow-md glow-border"
                 required
-                className="w-full px-4 py-2 bg-gray-800/50 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 text-white"
               />
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-200 mb-2 glow-text"
+              >
                 Email
               </label>
-              <input
+              <motion.input
                 type="email"
                 id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
+                name="user_email"
+                whileFocus={{ borderColor: "#A855F7" }}
+                className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-white bg-[#0f071a]/80 shadow-md glow-border"
                 required
-                className="w-full px-4 py-2 bg-gray-800/50 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 text-white"
               />
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-1">
+              <label
+                htmlFor="message"
+                className="block text-sm font-medium text-gray-200 mb-2 glow-text"
+              >
                 Message
               </label>
-              <textarea
+              <motion.textarea
                 id="message"
                 name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
                 rows={5}
-                className="w-full px-4 py-2 bg-gray-800/50 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 text-white"
+                whileFocus={{ borderColor: "#A855F7" }}
+                className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-white bg-[#0f071a]/80 shadow-md glow-border"
+                required
               />
             </div>
 
             <motion.button
               type="submit"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="w-full py-3 bg-purple-600 hover:bg-purple-700 rounded-md text-white font-medium transition-colors"
+              whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(168, 85, 247, 0.8)" }}
+              whileTap={{ scale: 0.95 }}
+              className="w-full py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 rounded-lg text-white font-semibold transition-all duration-300 glow-border shadow-lg"
             >
               Send Message
             </motion.button>
           </form>
+
+          {/* Success Popup */}
+          <AnimatePresence>
+            {messageSent && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ duration: 0.5 }}
+                className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-green-400 to-teal-500 text-white p-6 rounded-lg shadow-lg z-50 glow-border"
+              >
+                <p className="text-base font-medium text-center glow-text">
+                  Message Sent Successfully! 🎉
+                </p>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </motion.div>
       </div>
     </section>
