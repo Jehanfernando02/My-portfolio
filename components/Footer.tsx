@@ -11,11 +11,11 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="py-12 relative overflow-hidden border-t border-gray-800/50">
-      {/* Stunning Background Glow */}
-      <div className="absolute inset-0 hero-glow opacity-40 scale-150 bg-gradient-to-t from-purple-600/30 via-indigo-500/20 to-teal-500/30"></div>
+    <footer className="py-12 relative overflow-hidden bg-gradient-to-br from-black via-purple-950 to-indigo-900 border-t border-gray-800/50">
+      {/* Consistent Background Glow */}
+      <div className="absolute inset-0 hero-glow opacity-40 scale-150 bg-gradient-to-br from-purple-600/30 via-pink-500/20 to-teal-500/30"></div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 relative z-10 max-w-6xl">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           {/* Personal Tagline Section */}
           <motion.div
@@ -25,10 +25,10 @@ export default function Footer() {
             viewport={{ once: true }}
             className="text-center md:text-left mb-4 md:mb-0"
           >
-            <p className="text-lg font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-teal-400 glow-text">
-              Crafting Digital Experiences
+            <p className="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-teal-400 glow-text tracking-tight">
+              Crafting Digital Masterpieces
             </p>
-            <p className="text-sm text-gray-300 glow-text">Jehan Fernando </p>
+            <p className="text-sm text-gray-200 glow-text">Jehan Fernando - Full-Stack Innovator</p>
           </motion.div>
 
           {/* Navigation Links */}
@@ -39,7 +39,7 @@ export default function Footer() {
             viewport={{ once: true }}
             className="flex flex-wrap justify-center gap-6"
           >
-            {navLinks.map((link, index) => (
+            {navLinks.map((link, _) => ( // Replaced 'index' with '_' to fix unused variable error
               <motion.a
                 key={link.name}
                 href={link.href}
@@ -48,7 +48,8 @@ export default function Footer() {
                   boxShadow: "0 0 15px rgba(168, 85, 247, 0.8)",
                   color: "#A855F7",
                 }}
-                className="text-sm font-medium text-gray-400 hover:text-white transition-colors glow-text"
+                whileTap={{ scale: 0.95 }}
+                className="text-sm font-medium text-gray-300 hover:text-white transition-colors glow-text"
               >
                 {link.name}
               </motion.a>
@@ -68,9 +69,9 @@ export default function Footer() {
               whileHover={{
                 scale: 1.1,
                 boxShadow: "0 0 15px rgba(168, 85, 247, 0.8)",
-                color: "#A855F7",
               }}
-              className="text-sm font-medium text-gray-400 rounded-full px-4 py-2 bg-gray-900/70 glow-border shadow-md transition-colors"
+              whileTap={{ scale: 0.95 }}
+              className="text-sm font-medium text-white px-5 py-2 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 rounded-full glow-border shadow-md transition-all duration-300"
             >
               Back to Top
             </motion.a>
