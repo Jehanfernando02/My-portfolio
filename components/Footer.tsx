@@ -9,7 +9,7 @@ export default function Footer() {
             <Logo size={32} />
           </div>
 
-          <div className="text-sm text-gray-400">© {new Date().getFullYear()} Your Name. All rights reserved.</div>
+          <div className="text-sm text-gray-400">© {new Date().getFullYear()} Jehan Fernando. All rights reserved.</div>
 
           <div className="mt-4 md:mt-0">
             <a href="#home" className="text-sm text-gray-400 hover:text-white transition-colors">

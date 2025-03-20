@@ -1,92 +1,107 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Image from "next/image"
-import { motion, AnimatePresence } from "framer-motion"
+import { useState } from "react";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface Project {
-  id: number
-  title: string
-  description: string
-  image: string
-  category: string
-  details?: string
-  technologies?: string[]
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  category: string;
+  details?: string;
+  technologies?: string[];
+  liveLink?: string;
+  githubLink?: string;
 }
 
 export default function Projects() {
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null)
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const projects: Project[] = [
     {
       id: 1,
       title: "We Neighbour",
       description:
-        "A digital platform designed to enhance communication, security, and engagement in apartment communities. Residents can share resources, receive real-time safety alerts, manage visitor access with QR codes, book amenities, and stay updated with community announcements—all in one seamless app.",
+        "A digital platform designed to enhance communication, security, and engagement in apartment communities.",
       image: "/assets/neighbour.webp",
       category: "Ongoing Group Project",
       details:
-        "We-Neighbour is a smart community management platform designed to improve communication, security, and engagement in apartment living. It provides features such as real-time safety alerts, QR code visitor management, a community forum, and a resource-sharing system to enhance daily interactions.",
+        "We-Neighbour is a smart community management platform designed to improve communication, security, and engagement in apartment living. Features include real-time safety alerts, QR code visitor management, and a resource-sharing system.",
       technologies: ["Flutter", "Node.js", "MongoDB", "AWS", "Firebase", "QR Code API", "Google Calendar API"],
-    },  
-    
+      liveLink: "https://we-neighbour-demo.example.com",
+      githubLink: "https://github.com/yourusername/we-neighbour",
+    },
     {
       id: 2,
       title: "Imperial Fit",
       description:
-        "A next-generation fitness platform designed to provide users with personalized workout plans, progress tracking, and an interactive shopping experience for fitness gear. With Imperial Fit, users can access expert fitness programs, book training sessions, and manage their fitness journey seamlessly.",
+        "A next-generation fitness platform with personalized workout plans, progress tracking, and an interactive shopping experience.",
       image: "/assets/Imperial.png",
       category: "Individual Project",
       details:
-        "Imperial Fit is a comprehensive fitness ecosystem that brings together workout planning, progress tracking, and a seamless shopping experience. Users can explore tailored fitness programs, receive expert guidance, track their progress in real-time, and purchase gym essentials—all within a single platform.",
+        "Imperial Fit is a comprehensive fitness ecosystem offering workout planning, progress tracking, and a seamless shopping experience for gym essentials.",
       technologies: ["React", "Node.js", "MongoDB", "Express", "TailwindCSS", "Firebase", "Stripe API"],
-    },
-  
-    {
-      "id": 3,
-      "title": "Dream Space",
-      "description": 
-        "A modern property search application designed to help users find their ideal homes with ease. Dream Space offers advanced search filtering, detailed property pages, Google Maps integration for location insights, and a user-friendly favorites list to save properties.",
-      "image": "/assets/dream.png",
-      "category": "Individual Project",
-      "details": 
-        "Dream Space is a feature-rich real estate platform that simplifies property discovery. Users can filter properties by type, price, bedrooms, date added, and postcode area, view high-quality images, check floor plans, and explore locations using interactive Google Maps. With a sleek, responsive UI, it ensures a smooth browsing experience across all devices.",
-      "technologies": ["React", "Google Maps API", "React Router", "CSS (Flexbox, Grid)", "JSON Data Handling", "UI Libraries"]
+      liveLink: "https://imperial-fit-demo.example.com",
+      githubLink: "https://github.com/yourusername/imperial-fit",
     },
     {
-      "id": 4,
-      "title": "Trello Clone",
-      "description": 
-        "A task management application inspired by Trello, allowing users to organize and track their work efficiently. It features draggable task cards, customizable boards, real-time updates, and a collaborative workflow.",
-      "image": "/assets/trello-clone.png",
-      "category": "Individual Project",
-      "details": 
-        "This Trello Clone provides an intuitive way to manage tasks using boards, lists, and draggable cards. Users can create new boards, add task lists, move tasks between lists via drag-and-drop, and track their progress visually. The app supports local storage for persistence and ensures a responsive user experience across devices.",
-      "technologies": ["React", "React DnD", "Redux", "Tailwind CSS", "Local Storage", "Context API"]
+      id: 3,
+      title: "Dream Space",
+      description:
+        "A modern property search application with advanced filtering, detailed property pages, and Google Maps integration.",
+      image: "/assets/dream.png",
+      category: "Individual Project",
+      details:
+        "Dream Space simplifies property discovery with filterable searches, high-quality images, floor plans, and interactive Google Maps.",
+      technologies: ["React", "Google Maps API", "React Router", "CSS (Flexbox, Grid)", "JSON Data Handling", "UI Libraries"],
+      liveLink: "https://dream-space-demo.example.com",
+      githubLink: "https://github.com/yourusername/dream-space",
     },
-    
+    {
+      id: 4,
+      title: "Trello Clone",
+      description:
+        "A task management app with draggable task cards, customizable boards, and real-time updates.",
+      image: "/assets/trello-clone.png",
+      category: "Individual Project",
+      details:
+        "This Trello Clone offers an intuitive way to manage tasks using boards, lists, and draggable cards with local storage persistence.",
+      technologies: ["React", "React DnD", "Redux", "Tailwind CSS", "Local Storage", "Context API"],
+      liveLink: "https://trello-clone-demo.example.com",
+      githubLink: "https://github.com/yourusername/trello-clone",
+    },
     {
       id: 5,
-      title: "Example Project 4",
+      title: "AI Chatbot",
       description:
-        "An AI chatbot for automated customer support, designed to handle inquiries and provide instant responses.",
+        "An AI-powered chatbot for automated customer support with instant responses.",
       image: "/placeholder.svg?height=300&width=400",
       category: "Featured Project",
+      details:
+        "This AI Chatbot enhances customer support by providing instant, accurate responses to inquiries.",
+      technologies: ["Python", "TensorFlow", "Flask", "React", "WebSocket"],
+      liveLink: "https://ai-chatbot-demo.example.com",
+      githubLink: "https://github.com/yourusername/ai-chatbot",
     },
-  ]
+  ];
 
   return (
-    <section id="projects" className="py-20 relative">
-      <div className="container mx-auto px-4">
+    <section id="projects" className="py-20 relative overflow-hidden">
+      {/* Subtle background glow */}
+      <div className="absolute inset-0 hero-glow opacity-20 scale-150 bg-purple-500/10"></div>
+
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl font-bold mb-12 text-center">Projects</h2>
+          <h2 className="text-4xl font-bold mb-12 text-center text-white glow-text">Projects</h2>
 
-          {/* Grid layout for 3 projects per row */}
+          {/* Grid layout for project cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project) => (
               <motion.div
@@ -95,121 +110,134 @@ export default function Projects() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="bg-[#1a1a2e] p-4 rounded-lg shadow-lg flex flex-col items-center text-center"
+                whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
+                className="bg-[#1a1a2e] p-5 rounded-xl shadow-lg flex flex-col items-center text-center gradient-border"
               >
-                <div className="relative overflow-hidden rounded-lg gradient-border">
+                <div className="relative overflow-hidden rounded-lg mb-4">
                   <Image
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
                     width={400}
                     height={300}
-                    className="w-full h-auto rounded-md"
+                    className="w-full h-48 object-cover rounded-md transition-transform duration-300 group-hover:scale-105"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
 
-                <div className="mt-4">
+                <div className="flex-1">
                   <div className="text-sm text-purple-400 mb-2">{project.category}</div>
-                  <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                  <p className="text-gray-300 text-sm mb-4">{project.description}</p>
-
-                  <div className="flex justify-center gap-4">
-                    <button
-                      onClick={() => setSelectedProject(project)}
-                      className="px-4 py-2 bg-purple-500/20 hover:bg-purple-500/30 rounded-md transition-colors text-white"
-                    >
-                      View Details
-                    </button>
-                    <a
-                      href="#"
-                      className="px-4 py-2 border border-purple-500/30 hover:border-purple-500/50 rounded-md transition-colors text-white"
-                    >
-                      Live Demo
-                    </a>
-                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-white">{project.title}</h3>
+                  <p className="text-gray-300 text-sm mb-4 line-clamp-3">{project.description}</p>
                 </div>
+
+                <button
+                  onClick={() => setSelectedProject(project)}
+                  className="px-5 py-2 bg-purple-600 hover:bg-purple-700 rounded-full text-white font-medium transition-all duration-300 glow-border"
+                >
+                  View Details
+                </button>
               </motion.div>
             ))}
           </div>
         </motion.div>
       </div>
 
+      {/* Enhanced Modal */}
       <AnimatePresence>
         {selectedProject && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4 backdrop-blur-md"
             onClick={() => setSelectedProject(null)}
           >
-            <motion.div
-              initial={{ scale: 0.8 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.8 }}
-              className="bg-[#0a0118] p-6 rounded-lg max-w-3xl w-full max-h-[90vh] overflow-y-auto"
+            <div
+              className="bg-[#0f071a] p-6 rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative shadow-2xl border border-purple-500/30 glow-border"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="flex justify-between items-start mb-4">
-                <h3 className="text-2xl font-bold">{selectedProject.title}</h3>
-                <button onClick={() => setSelectedProject(null)} className="text-gray-400 hover:text-white">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    className="w-6 h-6"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
-              </div>
+              {/* More Visible Glowing Close Button */}
+              <button
+                onClick={() => setSelectedProject(null)}
+                className="absolute top-2 right-2 z-10 text-white bg-purple-700/80 hover:bg-purple-800/80 p-3 rounded-full transition-all duration-300 glow-border shadow-lg"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  className="w-7 h-7"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
 
-              <div className="mb-6">
-                <Image
-                  src={selectedProject.image || "/placeholder.svg?height=400&width=800"}
-                  alt={selectedProject.title}
-                  width={800}
-                  height={400}
-                  className="w-full h-auto rounded-lg"
-                />
-              </div>
+              {/* Modal Content */}
+              <div className="space-y-6">
+                {/* Slightly Smaller Full Image with Glow */}
+                <div className="relative rounded-xl overflow-hidden">
+                  <Image
+                    src={selectedProject.image || "/placeholder.svg?height=300&width=400"}
+                    alt={selectedProject.title}
+                    width={400}
+                    height={300}
+                    className="w-full h-auto max-h-48 object-contain glow-image rounded-xl"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  <h3 className="absolute bottom-3 left-3 text-xl font-bold text-white glow-text">
+                    {selectedProject.title}
+                  </h3>
+                </div>
 
-              <div className="space-y-4">
-                <h4 className="text-xl font-semibold">{selectedProject.title}</h4>
-                <p className="text-gray-300">{selectedProject.details}</p>
-
-                {selectedProject.technologies && (
+                {/* Details Section */}
+                <div className="space-y-5">
                   <div>
-                    <h5 className="text-lg font-semibold mb-2">Technologies Used</h5>
-                    <div className="flex flex-wrap gap-2">
-                      {selectedProject.technologies.map((tech) => (
-                        <span key={tech} className="px-3 py-1 bg-purple-500/20 rounded-full text-sm">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
+                    <h4 className="text-lg font-semibold text-purple-300 glow-text mb-2">Overview</h4>
+                    <p className="text-gray-200 text-sm leading-relaxed">{selectedProject.details}</p>
                   </div>
-                )}
 
-                <div className="pt-4 flex gap-4">
-                  <a
-                    href="#"
-                    className="px-4 py-2 bg-purple-500 hover:bg-purple-600 rounded-md transition-colors text-white"
-                  >
-                    Live Demo
-                  </a>
-                  <a
-                    href="#"
-                    className="px-4 py-2 border border-purple-500 hover:border-purple-400 rounded-md transition-colors text-white"
-                  >
-                    Source Code
-                  </a>
+                  {selectedProject.technologies && (
+                    <div>
+                      <h4 className="text-lg font-semibold text-purple-300 glow-text mb-2">Technologies Used</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {selectedProject.technologies.map((tech) => (
+                          <span
+                            key={tech}
+                            className="px-3 py-1 bg-purple-700/40 text-purple-100 rounded-full text-sm font-medium glow-border shadow-sm"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Buttons Container */}
+                  <div className="flex gap-4 pt-3">
+                    {selectedProject.liveLink && (
+                      <a
+                        href={selectedProject.liveLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-5 py-2 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 rounded-full text-white font-semibold transition-all duration-300 glow-border shadow-md"
+                      >
+                        Live Demo
+                      </a>
+                    )}
+                    {selectedProject.githubLink && (
+                      <a
+                        href={selectedProject.githubLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-5 py-2 bg-gray-800/80 hover:bg-gray-700/80 border border-purple-500/70 hover:border-purple-400 rounded-full text-white font-semibold transition-all duration-300 glow-border shadow-md"
+                      >
+                        Source Code
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
     </section>
-  )
+  );
 }

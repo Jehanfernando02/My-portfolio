@@ -69,7 +69,7 @@ export default function LogoAnimation() {
       ctx.font = "bold 40px sans-serif"
       ctx.textAlign = "center"
       ctx.textBaseline = "middle"
-      ctx.fillText("Σ", centerX, centerY)
+      ctx.fillText("JF", centerX, centerY)
 
       requestAnimationFrame(drawLogo)
     }
