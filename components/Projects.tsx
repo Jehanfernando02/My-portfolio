@@ -34,6 +34,7 @@ export default function Projects() {
         "Node.js",
         "MongoDB",
         "AWS",
+        "Firebase",
         "QR Code API",
         "Google Calendar API",
       ],
