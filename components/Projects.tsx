@@ -25,7 +25,7 @@ export default function Projects() {
       title: "We Neighbour",
       description:
         "A digital platform designed to enhance communication, security, and engagement in apartment communities.",
-      image: "/assets/neighbour.webp",
+      image: "/assets/neighb.png",
       category: "Ongoing Group Project",
       details:
         "We-Neighbour is a smart community management platform designed to improve communication, security, and engagement in apartment living. Features include real-time safety alerts, QR code visitor management, and a resource-sharing system.",
@@ -64,7 +64,7 @@ export default function Projects() {
       title: "Trello Clone",
       description:
         "A task management app with draggable task cards, customizable boards, and real-time updates.",
-      image: "/assets/trello-clone.png",
+      image: "/assets/task.jpg",
       category: "Individual Project",
       details:
         "This Trello Clone offers an intuitive way to manage tasks using boards, lists, and draggable cards with local storage persistence.",
@@ -74,10 +74,10 @@ export default function Projects() {
     },
     {
       id: 5,
-      title: "AI Chatbot",
+      title: "Real Time Event Ticketing System",
       description:
         "An AI-powered chatbot for automated customer support with instant responses.",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/assets/event.png",
       category: "Featured Project",
       details:
         "This AI Chatbot enhances customer support by providing instant, accurate responses to inquiries.",
