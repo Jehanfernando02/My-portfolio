@@ -39,7 +39,7 @@ export default function Footer() {
             viewport={{ once: true }}
             className="flex flex-wrap justify-center gap-6"
           >
-            {navLinks.map((link, _) => ( // Replaced 'index' with '_' to fix unused variable error
+            {navLinks.map((link) => ( // Removed unused '_' parameter
               <motion.a
                 key={link.name}
                 href={link.href}
