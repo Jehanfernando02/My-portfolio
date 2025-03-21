@@ -45,11 +45,11 @@ export default function Projects() {
       id: 2,
       title: "Imperial Fit",
       description:
-        "A next-generation fitness platform integrating AI-powered personalized workout plans, real-time progress tracking, and an interactive e-commerce experience for gym enthusiasts.",
+      "Imperial Fit is a modern fitness platform that offers personalized workout plans, progress tracking, and an integrated e-commerce section for gym essentials, providing a complete solution for fitness enthusiasts.",
       image: "/assets/Imperial.png",
       category: "Individual Project",
       details:
-        "Imperial Fit is an all-in-one fitness ecosystem designed to enhance workout efficiency and convenience. The platform offers AI-driven workout recommendations, goal-based progress tracking, and a seamless e-commerce experience for gym gear and supplements. Users can explore a curated selection of fitness products, make secure payments via Stripe, and receive real-time updates on their fitness journey. Additionally, Firebase authentication ensures secure user management.",
+      "Imperial Fit is a comprehensive fitness platform designed to help users achieve their health and wellness goals. It offers personalized workout plans tailored to different fitness levels, progress tracking, and an integrated e-commerce section for gym products such as apparel, accessories, and supplements. The platform also focuses on building a supportive community with motivational content, making it easier for users to stay on track and motivated. With a user-friendly interface, Imperial Fit provides everything needed to improve fitness and purchase essential gym gear in one convenient place.",
       technologies: [
         "ReactJS",
         "Vite",
@@ -109,7 +109,7 @@ export default function Projects() {
         "Local Storage",
         "Context API",
       ],
-      liveLink: "./",
+      liveLink: "https://trello-clone-ex.vercel.app/",
       githubLink: "https://github.com/Jehanfernando02/Task-Manager",
     },
     {
