@@ -69,7 +69,7 @@ export default function Projects() {
         "CRUD operations",
         "JWT Authentication",
       ],
-      liveLink: "https://imperial-fit-0.vercel.app/",
+      liveLink: "https://imperial-fit.vercel.app/",
       githubLink: "https://github.com/Jehanfernando02/Imperial-Fit",
     },
     {
