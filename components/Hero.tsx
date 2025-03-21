@@ -46,12 +46,12 @@ export default function Hero() {
               Jehan Fernando
             </h1>
 
-            {/* Enhanced, Detailed Description */}
+            {/* Enhanced, Human-Written Description */}
             <p className="text-gray-200 text-base sm:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 glow-text">
-              I’m a second-year trailblazer at the Informatics Institute of Technology, partnered with the University of Westminster, UK, where I transform bold ideas into digital masterpieces. As a full-stack virtuoso, I wield the MERN stack—React, Node.js, MongoDB—as my creative toolkit, alongside a vibrant arsenal of Java, Python, MySQL, and Spring Boot, to craft solutions that are as seamless as they are groundbreaking.
+              I’m a second-year Computer Science undergraduate at the Informatics Institute of Technology, partnered with the University of Westminster, UK, with a passion for turning ideas into impactful digital solutions. As a full-stack developer, I specialize in the MERN stack—crafting dynamic React front-ends, robust Node.js back-ends, and efficient MongoDB databases—while also wielding Java, Python, MySQL, and Spring Boot to tackle diverse challenges.
             </p>
             <p className="text-gray-200 text-base sm:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 glow-text">
-              My passion lies in bridging imagination and functionality—whether it’s designing RESTful APIs with Mongoose and Postman, weaving cross-platform wonders with Flutter, or diving deep into data structures, algorithms, and OOP to solve complex challenges. With a flair for leadership, a hunger for innovation, and a collaborative spirit, I’m here to push boundaries and spark inspiration. Ready to shape the future? Let’s craft something unforgettable together!
+              I thrive on solving real-world problems with a strong foundation in data structures, algorithms, and Object-Oriented Programming (OOP). From building RESTful APIs with Mongoose and Postman to exploring cross-platform mobile development with Flutter, I’m always eager to learn and adapt. With solid communication, leadership, and teamwork skills, I’m excited to collaborate on innovative projects that make a difference. Let’s connect and create something extraordinary!
             </p>
           </motion.div>
 

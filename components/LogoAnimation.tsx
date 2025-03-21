@@ -8,8 +8,6 @@ import { motion } from "framer-motion"
 export default function LogoAnimation() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
-  const [isHovering, setIsHovering] = useState(false)
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const animationFrameRef = useRef<number | null>(null)
 
   useEffect(() => {
@@ -277,40 +275,6 @@ export default function LogoAnimation() {
         "#ffffff",
       )
 
-      // Mouse interaction effect (if hovering)
-      if (isHovering && containerRef.current) {
-        const rect = containerRef.current.getBoundingClientRect()
-        const x = mousePosition.x - rect.left
-        const y = mousePosition.y - rect.top
-
-        // Draw mouse glow
-        createPulsingGlow(x, y, 10, 30, `rgba(138, 43, 226, 0.3)`, 1)
-
-        // Draw connecting line from mouse to center
-        const distance = Math.sqrt(Math.pow(x - centerX, 2) + Math.pow(y - centerY, 2))
-        if (distance < 200) {
-          ctx.strokeStyle = `rgba(138, 43, 226, ${0.5 - distance / 400})`
-          ctx.lineWidth = 2
-          ctx.beginPath()
-          ctx.moveTo(centerX, centerY)
-          ctx.lineTo(x, y)
-          ctx.stroke()
-
-          // Draw small particles along the line
-          const particleCount = Math.floor(distance / 20)
-          for (let i = 0; i < particleCount; i++) {
-            const ratio = i / particleCount
-            const particleX = centerX + (x - centerX) * ratio
-            const particleY = centerY + (y - centerY) * ratio
-
-            ctx.fillStyle = `rgba(138, 43, 226, ${0.7 - ratio * 0.5})`
-            ctx.beginPath()
-            ctx.arc(particleX, particleY, 2, 0, Math.PI * 2)
-            ctx.fill()
-          }
-        }
-      }
-
       animationFrameRef.current = requestAnimationFrame(animate)
     }
 
@@ -321,20 +285,7 @@ export default function LogoAnimation() {
         cancelAnimationFrame(animationFrameRef.current)
       }
     }
-  }, [mousePosition, isHovering])
-
-  // Handle mouse interactions
-  const handleMouseMove = (e: React.MouseEvent) => {
-    setMousePosition({ x: e.clientX, y: e.clientY })
-  }
-
-  const handleMouseEnter = () => {
-    setIsHovering(true)
-  }
-
-  const handleMouseLeave = () => {
-    setIsHovering(false)
-  }
+  }, [])
 
   return (
     <div className="flex justify-center items-center py-16">
@@ -345,9 +296,6 @@ export default function LogoAnimation() {
         viewport={{ once: true }}
         className="relative"
         ref={containerRef}
-        onMouseMove={handleMouseMove}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
       >
         {/* Background glow effect */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-purple-500/10 rounded-full blur-3xl" />
@@ -431,4 +379,3 @@ export default function LogoAnimation() {
     </div>
   )
 }
-
