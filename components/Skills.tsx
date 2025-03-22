@@ -9,32 +9,32 @@ interface Skill {
 
 export default function Skills() {
   const skills: Skill[] = [
-    { name: "HTML5", color: "#E34F26" },        // Orange
-    { name: "CSS3", color: "#1572B6" },         // Blue
-    { name: "Java", color: "#007396" },         // Dark cyan
-    { name: "JavaScript", color: "#F7DF1E" },   // Yellow
-    { name: "React", color: "#61DAFB" },        // Cyan
-    { name: "Tailwind CSS", color: "#06B6D4" }, // Teal
-    { name: "MySQL", color: "#4479A1" },        // Blue
-    { name: "MongoDB", color: "#47A248" },      // Green
-    { name: "Python", color: "#3776AB" },       // Blue
-    { name: "Spring Boot", color: "#6DB33F" },  // Green
-    { name: "Node.js", color: "#339933" },      // Green
-    { name: "Flutter", color: "#02569B" },      // Blue
-    { name: "REST API", color: "#FF6F61" },     // Coral
-    { name: "Mongoose", color: "#880000" },     // Dark red
+    { name: "Java", color: "#F89820" },         // Vibrant orange
+    { name: "JavaScript", color: "#F0DB4F" },   // Bright yellow
+    { name: "React", color: "#61DAFB" },        // Cyan (already nice)
+    { name: "Tailwind CSS", color: "#38BDF8" }, // Light teal
+    { name: "MySQL", color: "#00A8E8" },        // Bright blue
+    { name: "MongoDB", color: "#4DB33D" },      // Fresh green
+    { name: "Python", color: "#306998" },       // Cool blue
+    { name: "Spring Boot", color: "#6DB33F" },  // Green (already nice)
+    { name: "Node.js", color: "#68A063" },      // Soft green
+    { name: "Flutter", color: "#027DFD" },      // Vivid blue
+    { name: "REST API", color: "#FF6F61" },     // Coral (already nice)
+    { name: "Mongoose", color: "#A52A2A" },     // Rich brown-red
   ];
 
   const toolsAndTechnologies: Skill[] = [
-    { name: "GitHub", color: "#F05032" },       // Orange-red
-    { name: "VS Code", color: "#007ACC" },      // Blue
-    { name: "Postman", color: "#FF6C37" },      // Orange
-    { name: "Bootstrap", color: "#7952B3" },    // Purple
-    { name: "Figma", color: "#F24E1E" },        // Orange-red
-    { name: "Vercel", color: "#000000" },       // Black
-    { name: "Firebase", color: "#FFCA28" },     // Yellow
-    { name: "Thunder Client", color: "#4CAF50" }, // Green
-    { name: "Slack", color: "#4A154B" },        // Dark purple
+    { name: "GitHub", color: "#F05032" },       // Orange-red (already nice)
+    { name: "VS Code", color: "#007ACC" },      // Blue (already nice)
+    { name: "Postman", color: "#FF6C37" },      // Orange (already nice)
+    { name: "Bootstrap", color: "#7952B3" },    // Purple (already nice)
+    { name: "Figma", color: "#F24E1E" },        // Orange-red (already nice)
+    { name: "Vercel", color: "#00D4B4" },       // Bright teal (replaced black)
+    { name: "Firebase", color: "#FFCA28" },     // Yellow (already nice)
+    { name: "Thunder Client", color: "#4CAF50" }, // Green (already nice)
+    { name: "Slack", color: "#E01E5A" },        // Vibrant pink (replaced dark purple)
+    { name: "Android Studio", color: "#3DDC84" }, // Fresh green
+    { name: "IntelliJ IDEA", color: "#FE3159" },  // Bold red-pink
   ];
 
   return (

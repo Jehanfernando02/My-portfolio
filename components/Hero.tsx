@@ -27,7 +27,7 @@ export default function Hero() {
       <div className="absolute inset-0 hero-glow opacity-40 scale-150 bg-gradient-to-br from-purple-600/30 via-pink-500/20 to-teal-500/30"></div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10 max-w-6xl">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-16">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
           {/* Text Section */}
           <motion.div
             variants={textVariants}
@@ -35,34 +35,31 @@ export default function Hero() {
             animate="visible"
             className="w-full lg:w-3/5 space-y-8 text-center lg:text-left"
           >
-            <motion.div
-              whileHover={{ scale: 1.05, boxShadow: "0 0 15px rgba(168, 85, 247, 0.8)" }}
-              className="inline-block px-4 py-2 bg-[#1a1a2e]/80 rounded-full text-base sm:text-lg text-purple-200 border border-purple-600/50 shadow-lg glow-border"
-            >
+            <div className="inline-block px-4 py-2 bg-[#1a1a2e]/80 rounded-full text-base sm:text-lg text-purple-200 border border-purple-600/50 shadow-lg glow-border">
               Hey There, I’m
-            </motion.div>
+            </div>
 
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-teal-400 glow-text">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-teal-400 glow-text">
               Jehan Fernando
             </h1>
 
-            {/* Enhanced, Human-Written Description */}
             <p className="text-gray-200 text-base sm:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 glow-text">
-              I’m a second-year Computer Science undergraduate at the Informatics Institute of Technology, partnered with the University of Westminster, UK, with a passion for turning ideas into impactful digital solutions. As a full-stack developer, I specialize in the MERN stack—crafting dynamic React front-ends, robust Node.js back-ends, and efficient MongoDB databases—while also wielding Java, Python, MySQL, and Spring Boot to tackle diverse challenges.
+              I’m a second-year Computer Science undergraduate at the Informatics Institute of Technology affiliated with the University of Westminster, with a passion for crafting software that solves real-world problems.
+              Lately, I’ve been focusing on full-stack development, working with the MERN stack—creating dynamic React front-ends and robust Node.js-MongoDB back-ends. Alongside this, I have a strong background in Java, Object-Oriented Programming, and data structures.
             </p>
             <p className="text-gray-200 text-base sm:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 glow-text">
-              I thrive on solving real-world problems with a strong foundation in data structures, algorithms, and Object-Oriented Programming (OOP). From building RESTful APIs with Mongoose and Postman to exploring cross-platform mobile development with Flutter, I’m always eager to learn and adapt. With solid communication, leadership, and teamwork skills, I’m excited to collaborate on innovative projects that make a difference. Let’s connect and create something extraordinary!
+              I’ve worked with Spring Boot, Python, and MySQL to create scalable solutions, sharpened my skills with RESTful APIs using Mongoose and Postman, and recently started exploring Flutter for mobile development. I thrive in teamwork, love tackling challenges, and am always eager to collaborate—reach out, and let’s create something amazing!
             </p>
           </motion.div>
 
-          {/* Image Section */}
+          {/* Image Section - Smaller and Lower */}
           <motion.div
             variants={imageVariants}
             initial="hidden"
             animate="visible"
-            className="w-full lg:w-2/5 flex justify-center mt-10 lg:mt-0"
+            className="w-full lg:w-2/5 flex justify-center mt-12 lg:mt-4"
           >
-            <div className="relative group max-w-[240px]">
+            <div className="relative group max-w-[200px]">
               <div className="absolute -inset-4 bg-gradient-to-r from-purple-600/40 via-indigo-600/40 to-teal-600/40 rounded-full blur-lg group-hover:blur-xl transition-all duration-500"></div>
               <div className="relative">
                 <div className="absolute -inset-2 bg-[#1a1a2e]/80 rounded-full shadow-xl border border-purple-700/50 glow-border"></div>
@@ -74,8 +71,8 @@ export default function Hero() {
                   <Image
                     src="/assets/jehan.jpg"
                     alt="Jehan Fernando"
-                    width={240}
-                    height={240}
+                    width={200}
+                    height={200}
                     className="rounded-full object-cover border-4 border-purple-600/70 shadow-lg group-hover:border-teal-500/80 transition-all duration-500"
                   />
                   <div className="absolute inset-0 rounded-full bg-gradient-to-t from-purple-600/20 via-indigo-600/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -86,16 +83,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden sm:block"
-        animate={{ y: [0, 12, 0] }}
-        transition={{ repeat: Infinity, duration: 1.8 }}
-      >
-        <div className="w-6 h-10 border-2 border-purple-400/80 rounded-full flex justify-center glow-border">
-          <div className="w-1.5 h-3 bg-gradient-to-b from-purple-400 to-teal-400 rounded-full mt-2 animate-bounce"></div>
-        </div>
-      </motion.div>
+    
     </section>
   );
 }
