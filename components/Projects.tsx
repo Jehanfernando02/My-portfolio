@@ -122,7 +122,7 @@ export default function Projects() {
       details:
         "This system implements the Producer-Consumer pattern using multi-threading to handle concurrent ticket releases and purchases efficiently. Built with React for a dynamic front-end and Spring Boot for a robust backend, it ensures data integrity and real-time updates. The system supports configurable ticket release and retrieval rates, logging, and error handling. Users can monitor available tickets through a user-friendly dashboard, and the backend periodically updates the front-end using polling mechanisms. The database stores transaction history, providing insights into ticket sales and purchase trends.",
       technologies: ["React", "Spring Boot", "OOP", "Java", "REST API", "Periodic Polling"],
-      liveLink: "https://real-time-event-ticketing-platform-n7ip.vercel.app/",
+      liveLink: "https://event-ticketing-realtime.vercel.app/",
       githubLink: "https://github.com/Jehanfernando02/RealTime-Event-Ticketing-Platform",
     },
     {
