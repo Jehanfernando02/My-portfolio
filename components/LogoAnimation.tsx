@@ -1,18 +1,27 @@
 "use client";
 
 import type React from "react";
-import { useEffect, useRef } from "react"; // Removed useState
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 export default function LogoAnimation() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const animationFrameRef = useRef<number | null>(null);
+  const [particles, setParticles] = useState<{ width: number; height: number; top: string; left: string }[]>([]);
 
   useEffect(() => {
+    // Generate particle styles only on the client
+    const generatedParticles = Array.from({ length: 20 }).map(() => ({
+      width: Math.random() * 6 + 2,
+      height: Math.random() * 6 + 2,
+      top: `${Math.random() * 100}%`,
+      left: `${Math.random() * 100}%`,
+    }));
+    setParticles(generatedParticles);
+
     const canvas = canvasRef.current;
     if (!canvas) return;
-
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
@@ -28,13 +37,11 @@ export default function LogoAnimation() {
     const centerY = 200;
     const baseRadius = 80;
 
-    // Animation parameters
     let time = 0;
-    const hue = 270; // Purple hue
+    const hue = 270;
     let pulseSize = 0;
     let rotationAngle = 0;
 
-    // Create different particle systems
     const orbitalParticles: {
       x: number;
       y: number;
@@ -66,11 +73,9 @@ export default function LogoAnimation() {
       hue: number;
     }[] = [];
 
-    // Create orbital particles
     for (let i = 0; i < 80; i++) {
       const angle = Math.random() * Math.PI * 2;
       const orbitRadius = Math.random() * 30 + baseRadius;
-
       orbitalParticles.push({
         x: centerX + Math.cos(angle) * orbitRadius,
         y: centerY + Math.sin(angle) * orbitRadius,
@@ -84,7 +89,6 @@ export default function LogoAnimation() {
       });
     }
 
-    // Create floating background particles
     for (let i = 0; i < 50; i++) {
       floatingParticles.push({
         x: (Math.random() * canvas.width) / pixelRatio,
@@ -97,7 +101,6 @@ export default function LogoAnimation() {
       });
     }
 
-    // Create glowing dots around the logo
     for (let i = 0; i < 12; i++) {
       const angle = (i / 12) * Math.PI * 2;
       glowingDots.push({
@@ -110,7 +113,6 @@ export default function LogoAnimation() {
       });
     }
 
-    // Function to draw a glowing text
     const drawGlowingText = (
       text: string,
       x: number,
@@ -118,11 +120,9 @@ export default function LogoAnimation() {
       fontSize: number,
       glowSize: number,
       glowColor: string,
-      textColor: string,
+      textColor: string
     ) => {
       ctx.save();
-
-      // Draw glow
       ctx.font = `bold ${fontSize}px 'Montserrat', sans-serif`;
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
@@ -130,90 +130,67 @@ export default function LogoAnimation() {
       ctx.shadowBlur = glowSize;
       ctx.fillStyle = glowColor;
       ctx.fillText(text, x, y);
-
-      // Draw text
       ctx.shadowBlur = 0;
       ctx.fillStyle = textColor;
       ctx.fillText(text, x, y);
-
       ctx.restore();
     };
 
-    // Function to create a pulsing glow effect
     const createPulsingGlow = (
       x: number,
       y: number,
       minRadius: number,
       maxRadius: number,
       color: string,
-      speed: number,
+      speed: number
     ) => {
       const radius = minRadius + ((Math.sin(time * speed) + 1) / 2) * (maxRadius - minRadius);
-
       const gradient = ctx.createRadialGradient(x, y, 0, x, y, radius);
       gradient.addColorStop(0, color);
       gradient.addColorStop(1, "rgba(0, 0, 0, 0)");
-
       ctx.fillStyle = gradient;
       ctx.beginPath();
       ctx.arc(x, y, radius, 0, Math.PI * 2);
       ctx.fill();
     };
 
-    // Main animation loop
     const animate = () => {
-      time += 0.016; // Approximately 60fps
+      time += 0.016;
       rotationAngle += 0.005;
       pulseSize = (Math.sin(time) + 1) / 2;
 
-      // Clear canvas
       ctx.clearRect(0, 0, canvas.width / pixelRatio, canvas.height / pixelRatio);
-
-      // Draw background
       ctx.fillStyle = "rgba(10, 1, 24, 0.1)";
       ctx.fillRect(0, 0, canvas.width / pixelRatio, canvas.height / pixelRatio);
 
-      // Draw floating particles
       floatingParticles.forEach((particle) => {
         ctx.fillStyle = `hsla(${particle.hue}, 100%, 70%, ${particle.alpha})`;
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
         ctx.fill();
-
-        // Update position
         particle.x += particle.speedX;
         particle.y += particle.speedY;
-
-        // Wrap around screen
         if (particle.x < 0) particle.x = canvas.width / pixelRatio;
         if (particle.x > canvas.width / pixelRatio) particle.x = 0;
         if (particle.y < 0) particle.y = canvas.height / pixelRatio;
         if (particle.y > canvas.height / pixelRatio) particle.y = 0;
       });
 
-      // Create base glow
       createPulsingGlow(
         centerX,
         centerY,
         baseRadius * 0.8,
         baseRadius * 2,
         `rgba(138, 43, 226, ${0.3 + pulseSize * 0.2})`,
-        0.5,
+        0.5
       );
 
-      // Draw orbital particles
       orbitalParticles.forEach((particle) => {
-        // Update orbit
         particle.angle += particle.orbitSpeed;
-
-        // Calculate position based on orbit and add some wobble
         const wobble = Math.sin(time * 2 + particle.angle * 3) * 5;
         const currentRadius = particle.orbitRadius + wobble;
-
         particle.x = centerX + Math.cos(particle.angle) * currentRadius;
         particle.y = centerY + Math.sin(particle.angle) * currentRadius;
-
-        // Draw particle with glow
         ctx.shadowColor = `hsla(${particle.hue}, 100%, 70%, ${particle.alpha})`;
         ctx.shadowBlur = 5;
         ctx.fillStyle = `hsla(${particle.hue}, 100%, 70%, ${particle.alpha})`;
@@ -223,12 +200,10 @@ export default function LogoAnimation() {
         ctx.shadowBlur = 0;
       });
 
-      // Draw glowing dots
       glowingDots.forEach((dot) => {
         const pulseFactor = Math.sin(time * dot.pulseSpeed + dot.pulseOffset) * 0.5 + 0.5;
         const x = centerX + Math.cos(dot.angle + rotationAngle) * dot.distance;
         const y = centerY + Math.sin(dot.angle + rotationAngle) * dot.distance;
-
         ctx.shadowColor = `hsla(${dot.hue}, 100%, 70%, ${0.7 + pulseFactor * 0.3})`;
         ctx.shadowBlur = 10;
         ctx.fillStyle = `hsla(${dot.hue}, 100%, 70%, ${0.7 + pulseFactor * 0.3})`;
@@ -238,32 +213,26 @@ export default function LogoAnimation() {
         ctx.shadowBlur = 0;
       });
 
-      // Draw connecting lines between glowing dots
       ctx.strokeStyle = `rgba(138, 43, 226, ${0.1 + pulseSize * 0.1})`;
       ctx.lineWidth = 1;
-
       for (let i = 0; i < glowingDots.length; i++) {
         const dot1 = glowingDots[i];
         const dot2 = glowingDots[(i + 1) % glowingDots.length];
-
         const x1 = centerX + Math.cos(dot1.angle + rotationAngle) * dot1.distance;
         const y1 = centerY + Math.sin(dot1.angle + rotationAngle) * dot1.distance;
         const x2 = centerX + Math.cos(dot2.angle + rotationAngle) * dot2.distance;
         const y2 = centerY + Math.sin(dot2.angle + rotationAngle) * dot2.distance;
-
         ctx.beginPath();
         ctx.moveTo(x1, y1);
         ctx.lineTo(x2, y2);
         ctx.stroke();
       }
 
-      // Draw inner circle
       ctx.fillStyle = `rgba(20, 5, 40, 0.7)`;
       ctx.beginPath();
       ctx.arc(centerX, centerY, baseRadius * 0.7, 0, Math.PI * 2);
       ctx.fill();
 
-      // Draw logo text with glow
       drawGlowingText(
         "JF",
         centerX,
@@ -271,7 +240,7 @@ export default function LogoAnimation() {
         50,
         15 + pulseSize * 5,
         `rgba(138, 43, 226, ${0.7 + pulseSize * 0.3})`,
-        "#ffffff",
+        "#ffffff"
       );
 
       animationFrameRef.current = requestAnimationFrame(animate);
@@ -280,9 +249,7 @@ export default function LogoAnimation() {
     animate();
 
     return () => {
-      if (animationFrameRef.current) {
-        cancelAnimationFrame(animationFrameRef.current);
-      }
+      if (animationFrameRef.current) cancelAnimationFrame(animationFrameRef.current);
     };
   }, []);
 
@@ -296,71 +263,28 @@ export default function LogoAnimation() {
         className="relative"
         ref={containerRef}
       >
-        {/* Background glow effect */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-purple-500/10 rounded-full blur-3xl" />
-
-        {/* Animated rings */}
         <motion.div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] border border-purple-500/20 rounded-full"
-          animate={{
-            scale: [1, 1.05, 1],
-            opacity: [0.3, 0.5, 0.3],
-          }}
-          transition={{
-            duration: 4,
-            repeat: Number.POSITIVE_INFINITY,
-            ease: "easeInOut",
-          }}
+          animate={{ scale: [1, 1.05, 1], opacity: [0.3, 0.5, 0.3] }}
+          transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
         />
-
         <motion.div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] h-[320px] border border-purple-500/10 rounded-full"
-          animate={{
-            scale: [1, 1.1, 1],
-            opacity: [0.2, 0.3, 0.2],
-          }}
-          transition={{
-            duration: 5,
-            repeat: Number.POSITIVE_INFINITY,
-            ease: "easeInOut",
-            delay: 0.5,
-          }}
+          animate={{ scale: [1, 1.1, 1], opacity: [0.2, 0.3, 0.2] }}
+          transition={{ duration: 5, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut", delay: 0.5 }}
         />
-
         <motion.div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[360px] h-[360px] border border-purple-500/5 rounded-full"
-          animate={{
-            scale: [1, 1.15, 1],
-            opacity: [0.1, 0.2, 0.1],
-          }}
-          transition={{
-            duration: 6,
-            repeat: Number.POSITIVE_INFINITY,
-            ease: "easeInOut",
-            delay: 1,
-          }}
+          animate={{ scale: [1, 1.15, 1], opacity: [0.1, 0.2, 0.1] }}
+          transition={{ duration: 6, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut", delay: 1 }}
         />
-
-        {/* Canvas for the main animation */}
-        <canvas
-          ref={canvasRef}
-          width={400}
-          height={400}
-          className="mx-auto relative z-10"
-          style={{ width: "400px", height: "400px" }}
-        />
-
-        {/* Floating particles using Framer Motion */}
-        {Array.from({ length: 20 }).map((_, i) => (
+        <canvas ref={canvasRef} width={400} height={400} className="mx-auto relative z-10" style={{ width: "400px", height: "400px" }} />
+        {particles.map((particle, i) => (
           <motion.div
             key={i}
             className="absolute rounded-full bg-purple-400/30"
-            style={{
-              width: Math.random() * 6 + 2,
-              height: Math.random() * 6 + 2,
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-            }}
+            style={particle}
             animate={{
               y: [Math.random() * 20, Math.random() * -20, Math.random() * 20],
               x: [Math.random() * 20, Math.random() * -20, Math.random() * 20],

@@ -46,7 +46,7 @@ export default function Projects() {
       title: "Imperial Fit",
       description:
       "Imperial Fit is a modern fitness platform that offers personalized workout plans, progress tracking, and an integrated e-commerce section for gym essentials, providing a complete solution for fitness enthusiasts.",
-      image: "/assets/Imperial.png",
+      image: "/assets/imperialFit.png",
       category: "Individual Project",
       details:
       "Imperial Fit is a comprehensive fitness platform designed to help users achieve their health and wellness goals. It offers personalized workout plans tailored to different fitness levels, progress tracking, and an integrated e-commerce section for gym products such as apparel, accessories, and supplements. The platform also focuses on building a supportive community with motivational content, making it easier for users to stay on track and motivated. With a user-friendly interface, Imperial Fit provides everything needed to improve fitness and purchase essential gym gear in one convenient place.",
@@ -94,6 +94,32 @@ export default function Projects() {
     },
     {
       id: 4,
+      title: "Real-Time Event Ticketing System",
+      description:
+        "A concurrent ticketing system that allows vendors to release tickets and customers to purchase them in real-time.",
+      image: "/assets/event.png",
+      category: "Individual Project",
+      details:
+        "This system implements the Producer-Consumer pattern using multi-threading to handle concurrent ticket releases and purchases efficiently. Built with React for a dynamic front-end and Spring Boot for a robust backend, it ensures data integrity and real-time updates. The system supports configurable ticket release and retrieval rates, logging, and error handling. Users can monitor available tickets through a user-friendly dashboard, and the backend periodically updates the front-end using polling mechanisms. The database stores transaction history, providing insights into ticket sales and purchase trends.",
+      technologies: ["React", "Spring Boot", "OOP", "Java", "REST API", "Periodic Polling"],
+      liveLink: "https://event-ticketing-realtime.vercel.app/",
+      githubLink: "https://github.com/Jehanfernando02/RealTime-Event-Ticketing-Platform",
+    },
+    {
+      id: 5,
+      title: "Aqua Life",
+      description:
+        "A website designed to raise awareness about Sustainable Development Goal 14 (Life Below Water), promoting the conservation and sustainable use of oceans, seas, and marine resources.",
+      image: "/assets/aqua.png",
+      category: "Group Project",
+      details:
+        "Aqua Life is a collaborative group project aimed at highlighting SDG 14. It features a splash screen introducing the mission to protect marine life, a home page with a navigation bar and oceanic theme, an interactive gallery showcasing marine ecosystems, a shop offering eco-friendly products to support ocean conservation, a progressive user profile for environmental enthusiasts, a feedback form for visitor input, an SVG sitemap, and a team page detailing our contributions. Each member created a content page exploring topics like marine pollution and sustainable fishing, enhanced with a custom page editor.",
+      technologies: ["HTML, CSS, JavaScript"],
+      liveLink: "http://aqualife.kesug.com/",
+      githubLink: "https://github.com/nethsuka/WDGP_coursework",
+    },
+    {
+      id: 6,
       title: "Trello Clone",
       description:
         "A task management app with draggable task cards, customizable boards, and real-time updates.",
@@ -112,32 +138,7 @@ export default function Projects() {
       liveLink: "https://trello-clone-ex.vercel.app/",
       githubLink: "https://github.com/Jehanfernando02/Task-Manager",
     },
-    {
-      id: 5,
-      title: "Real-Time Event Ticketing System",
-      description:
-        "A concurrent ticketing system that allows vendors to release tickets and customers to purchase them in real-time.",
-      image: "/assets/event.png",
-      category: "Individual Project",
-      details:
-        "This system implements the Producer-Consumer pattern using multi-threading to handle concurrent ticket releases and purchases efficiently. Built with React for a dynamic front-end and Spring Boot for a robust backend, it ensures data integrity and real-time updates. The system supports configurable ticket release and retrieval rates, logging, and error handling. Users can monitor available tickets through a user-friendly dashboard, and the backend periodically updates the front-end using polling mechanisms. The database stores transaction history, providing insights into ticket sales and purchase trends.",
-      technologies: ["React", "Spring Boot", "OOP", "Java", "REST API", "Periodic Polling"],
-      liveLink: "https://event-ticketing-realtime.vercel.app/",
-      githubLink: "https://github.com/Jehanfernando02/RealTime-Event-Ticketing-Platform",
-    },
-    {
-      id: 6,
-      title: "Aqua Life",
-      description:
-        "A website designed to raise awareness about Sustainable Development Goal 14 (Life Below Water), promoting the conservation and sustainable use of oceans, seas, and marine resources.",
-      image: "/assets/aqua.png",
-      category: "Group Project",
-      details:
-        "Aqua Life is a collaborative group project aimed at highlighting SDG 14. It features a splash screen introducing the mission to protect marine life, a home page with a navigation bar and oceanic theme, an interactive gallery showcasing marine ecosystems, a shop offering eco-friendly products to support ocean conservation, a progressive user profile for environmental enthusiasts, a feedback form for visitor input, an SVG sitemap, and a team page detailing our contributions. Each member created a content page exploring topics like marine pollution and sustainable fishing, enhanced with a custom page editor.",
-      technologies: ["HTML, CSS, JavaScript"],
-      liveLink: "http://aqualife.kesug.com/",
-      githubLink: "https://github.com/nethsuka/WDGP_coursework",
-    },
+
   ];
 
   return (
