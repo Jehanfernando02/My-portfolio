@@ -3,15 +3,19 @@
 @tailwind utilities;
 
 :root {
-  --primary: #8a2be2;
-  --primary-glow: rgba(138, 43, 226, 0.35);
-  --background: #0a0118;
-  --card-background: rgba(30, 10, 60, 0.4);
+  --primary: #2563eb;
+  --primary-light: #60a5fa;
+  --primary-dark: #1d4ed8;
+  --primary-glow: rgba(37, 99, 235, 0.35);
+  --background: #f8fafc;
+  --card-background: rgba(255, 255, 255, 0.9);
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
 }
 
 body {
   background-color: var(--background);
-  color: white;
+  color: var(--text-primary);
   overflow-x: hidden;
 }
 
@@ -31,7 +35,7 @@ body {
   background-color: var(--card-background);
   border-radius: 8px;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(138, 43, 226, 0.2);
+  border: 1px solid rgba(37, 99, 235, 0.2);
 }
 
 .gradient-border {
@@ -59,19 +63,7 @@ body {
   width: 300px;
   height: 300px;
   border-radius: 50%;
-  background: radial-gradient(circle, var(--primary-glow) 0%, rgba(138, 43, 226, 0) 70%);
-  z-index: -1;
-  filter: blur(30px);
-}
-
-
-
-.hero-glow {
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--primary-glow) 0%, rgba(138, 43, 226, 0) 70%);
+  background: radial-gradient(circle, var(--primary-glow) 0%, rgba(37, 99, 235, 0) 70%);
   z-index: -1;
   filter: blur(30px);
 }

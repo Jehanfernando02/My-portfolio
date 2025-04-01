@@ -9,118 +9,138 @@ interface Skill {
 
 export default function Skills() {
   const skills: Skill[] = [
-    { name: "Java", color: "#F89820" },         // Vibrant orange
-    { name: "JavaScript", color: "#F0DB4F" },   // Bright yellow
-    { name: "React", color: "#61DAFB" },        // Cyan (already nice)
-    { name: "Tailwind CSS", color: "#38BDF8" }, // Light teal
-    { name: "MySQL", color: "#00A8E8" },        // Bright blue
-    { name: "MongoDB", color: "#4DB33D" },      // Fresh green
-    { name: "Python", color: "#306998" },       // Cool blue
-    { name: "Spring Boot", color: "#6DB33F" },  // Green (already nice)
-    { name: "Node.js", color: "#68A063" },      // Soft green
-    { name: "Flutter", color: "#027DFD" },      // Vivid blue
-    { name: "REST API", color: "#FF6F61" },     // Coral (already nice)
-    { name: "Mongoose", color: "#A52A2A" },     // Rich brown-red
+    { name: "Java", color: "#2563eb" },         // Rich Blue
+    { name: "JavaScript", color: "#facc15" },   // Bright Yellow
+    { name: "React", color: "#60a5fa" },        // Sky Blue
+    { name: "Tailwind CSS", color: "#38bdf8" }, // Cyan
+    { name: "MySQL", color: "#f97316" },        // Orange
+    { name: "MongoDB", color: "#10b981" },      // Emerald Green
+    { name: "Python", color: "#8b5cf6" },       // Vibrant Purple
+    { name: "Spring Boot", color: "#22c55e" },  // Lime Green
+    { name: "Node.js", color: "#2563eb" },      // Rich Blue
+    { name: "Flutter", color: "#60a5fa" },      // Sky Blue
+    { name: "REST API", color: "#ec4899" },     // Hot Pink
+    { name: "Mongoose", color: "#10b981" },     // Emerald Green
   ];
 
   const toolsAndTechnologies: Skill[] = [
-    { name: "GitHub", color: "#F05032" },       // Orange-red (already nice)
-    { name: "VS Code", color: "#007ACC" },      // Blue (already nice)
-    { name: "Postman", color: "#FF6C37" },      // Orange (already nice)
-    { name: "Bootstrap", color: "#7952B3" },    // Purple (already nice)
-    { name: "Figma", color: "#F24E1E" },        // Orange-red (already nice)
-    { name: "Vercel", color: "#00D4B4" },       // Bright teal (replaced black)
-    { name: "Firebase", color: "#FFCA28" },     // Yellow (already nice)
-    { name: "Thunder Client", color: "#4CAF50" }, // Green (already nice)
-    { name: "Slack", color: "#E01E5A" },        // Vibrant pink (replaced dark purple)
-    { name: "Android Studio", color: "#3DDC84" }, // Fresh green
-    { name: "IntelliJ IDEA", color: "#FE3159" },  // Bold red-pink
+    { name: "GitHub", color: "#2563eb" },       // Rich Blue
+    { name: "VS Code", color: "#3b82f6" },      // Medium Blue
+    { name: "Postman", color: "#f97316" },      // Orange
+    { name: "Bootstrap", color: "#8b5cf6" },    // Vibrant Purple
+    { name: "Figma", color: "#ec4899" },        // Hot Pink
+    { name: "Vercel", color: "#60a5fa" },       // Sky Blue
+    { name: "Firebase", color: "#facc15" },     // Bright Yellow
+    { name: "Thunder Client", color: "#22c55e" }, // Lime Green
+    { name: "Slack", color: "#3b82f6" },        // Medium Blue
+    { name: "Android Studio", color: "#10b981" }, // Emerald Green
+    { name: "IntelliJ IDEA", color: "#f97316" },  // Orange
   ];
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { staggerChildren: 0.05 } },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, scale: 0.95 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: "easeOut" } },
+  };
 
   return (
     <section
       id="skills"
-      className="py-20 relative overflow-hidden bg-gradient-to-br from-black via-purple-950 to-indigo-900"
+      className="py-20 relative bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200 overflow-hidden"
     >
-      {/* Consistent Background Glow */}
-      <div className="absolute inset-0 hero-glow opacity-40 scale-150 bg-gradient-to-br from-purple-600/30 via-pink-500/20 to-teal-500/30"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-300/40 via-transparent to-transparent opacity-70 animate-pulse"></div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
+      <div className="container mx-auto px-4 relative z-10 max-w-6xl">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="max-w-6xl mx-auto"
+          className="text-5xl font-extrabold mb-12 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-900 via-blue-700 to-blue-500 tracking-tight drop-shadow-lg"
         >
-          <h2 className="text-5xl font-extrabold mb-16 text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-teal-400 glow-text tracking-tight">
-            My Skills
-          </h2>
+          My Expertise
+        </motion.h2>
 
-          {/* Skills Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
-            {skills.map((skill, index) => (
+        {/* Skills Section */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="mb-12"
+        >
+          <h3 className="text-2xl font-semibold mb-6 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-blue-700 drop-shadow-sm">
+            Technical Skills
+          </h3>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+            {skills.map((skill) => (
               <motion.div
                 key={skill.name}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-                viewport={{ once: true }}
+                variants={cardVariants}
                 whileHover={{
                   scale: 1.1,
-                  boxShadow: `0 0 20px ${skill.color}80`,
-                  transition: { duration: 0.3 },
+                  boxShadow: `0 0 30px ${skill.color}90`,
+                  background: `linear-gradient(135deg, ${skill.color}30, #ffffffee)`,
                 }}
-                className="relative p-5 rounded-xl shadow-lg overflow-hidden bg-[#1a1a2e]/80 glow-border"
-                style={{ border: `2px solid ${skill.color}50` }}
+                className="p-5 bg-white/95 rounded-xl border border-gray-200/50 shadow-lg flex items-center justify-center transition-all duration-300 relative overflow-hidden"
               >
                 <div
-                  className="absolute inset-0 opacity-20 hover:opacity-50 transition-opacity duration-300"
+                  className="absolute inset-0 opacity-0 hover:opacity-30 transition-opacity duration-300"
                   style={{
                     background: `radial-gradient(circle, ${skill.color}60, transparent)`,
                   }}
                 />
                 <span
-                  className="relative z-10 font-semibold text-base glow-text"
-                  style={{ color: skill.color }}
+                  className="relative z-10 font-bold text-base text-gray-900"
+                  style={{ textShadow: `0 0 8px ${skill.color}80` }}
                 >
                   {skill.name}
                 </span>
               </motion.div>
             ))}
           </div>
+        </motion.div>
 
-          {/* Tools & Technologies Section */}
-          <div className="mt-16">
-            <h3 className="text-3xl font-bold mb-10 text-center text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-purple-400 to-pink-400 glow-text tracking-tight">
-              Tools & Technologies
-            </h3>
-
-            <div className="flex flex-wrap justify-center gap-5">
-              {toolsAndTechnologies.map((tool, index) => (
-                <motion.div
-                  key={tool.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.05 }}
-                  viewport={{ once: true }}
-                  whileHover={{
-                    scale: 1.1,
-                    boxShadow: `0 0 20px ${tool.color}80`,
-                    transition: { duration: 0.3 },
+        {/* Tools & Technologies Section */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <h3 className="text-2xl font-semibold mb-6 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-blue-700 drop-shadow-sm">
+            Tools & Technologies
+          </h3>
+          <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
+            {toolsAndTechnologies.map((tool) => (
+              <motion.div
+                key={tool.name}
+                variants={cardVariants}
+                whileHover={{
+                  scale: 1.1,
+                  boxShadow: `0 0 25px ${tool.color}90`,
+                  background: `linear-gradient(135deg, ${tool.color}30, #ffffffee)`,
+                }}
+                className="p-3 bg-white/95 rounded-full border border-gray-200/50 shadow-md flex items-center justify-center transition-all duration-300 relative overflow-hidden w-36"
+              >
+                <div
+                  className="absolute inset-0 opacity-0 hover:opacity-30 transition-opacity duration-300"
+                  style={{
+                    background: `radial-gradient(circle, ${tool.color}60, transparent)`,
                   }}
-                  className="px-6 py-3 rounded-full shadow-lg bg-[#1a1a2e]/80 glow-border"
-                  style={{ border: `2px solid ${tool.color}70` }}
+                />
+                <span
+                  className="relative z-10 font-semibold text-sm text-gray-900"
+                  style={{ textShadow: `0 0 8px ${tool.color}80` }}
                 >
-                  <span
-                    className="font-medium glow-text"
-                    style={{ color: tool.color }}
-                  >
-                    {tool.name}
-                  </span>
-                </motion.div>
-              ))}
-            </div>
+                  {tool.name}
+                </span>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
       </div>
