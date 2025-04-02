@@ -12,8 +12,8 @@ export default function Contact() {
 
   useEffect(() => {
     try {
-      emailjs.init("Pjc44CHoEK9xSOuFo");
-      console.log("EmailJS initialized successfully with public key: Pjc44CHoEK9xSOuFo");
+      emailjs.init("V9uWBvoNl3lM34Nsk");
+      console.log("EmailJS initialized successfully with public key: V9uWBvoNl3lM34Nsk");
     } catch (error) {
       console.error("Failed to initialize EmailJS:", error);
     }
@@ -40,9 +40,9 @@ export default function Contact() {
       return;
     }
 
-    const serviceId = "service_r5474wa";
+    const serviceId = "service_ctswhji";
     const templateId = "template_83g8o88";
-    const publicKey = "Pjc44CHoEK9xSOuFo";
+    const publicKey = "V9uWBvoNl3lM34Nsk";
     console.log("EmailJS credentials:", { serviceId, templateId, publicKey });
 
     emailjs.sendForm(serviceId, templateId, formRef.current, publicKey).then(
