@@ -108,7 +108,7 @@ export default function Hero() {
               I&apos;ve worked with Spring Boot, Python, and MySQL for scalable solutions, enhanced my ability to design
               and integrate RESTful APIs using Mongoose and Postman, and recently started exploring Flutter for mobile
               development. I enjoy teamwork, tackling challenges, and collaborating on exciting projects—reach out, and
-              let's create something great!
+              let&apos;s create something great!
             </p>
           </motion.div>
 
