@@ -36,7 +36,7 @@ export default function Hero() {
             className="w-full lg:w-3/5 space-y-8 text-center lg:text-left"
           >
             <div className="inline-block px-4 py-2 bg-white/80 rounded-full text-base sm:text-lg text-blue-600 border border-blue-200 shadow-lg">
-              Hey There, I'm
+              Hey There, I&apos;m
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-blue-500 to-blue-400">
@@ -98,15 +98,15 @@ export default function Hero() {
             </div>
 
             <p className="text-blue-900 text-base sm:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
-              I'm a second-year Computer Science undergraduate at the Informatics Institute of Technology, affiliated
-              with the University of Westminster. I'm passionate about building software that solves real-world
-              problems, with a focus on full-stack development using the MERN stack—crafting dynamic React front-ends
-              and solid Node.js-MongoDB back-ends. I also have a strong foundation in Java, Object-Oriented Programming,
-              and data structures.
+              I&apos;m a second-year Computer Science undergraduate at the Informatics Institute of Technology,
+              affiliated with the University of Westminster. I&apos;m passionate about building software that solves
+              real-world problems, with a focus on full-stack development using the MERN stack—crafting dynamic React
+              front-ends and solid Node.js-MongoDB back-ends. I also have a strong foundation in Java, Object-Oriented
+              Programming, and data structures.
             </p>
             <p className="text-blue-900 text-base sm:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
-              I've worked with Spring Boot, Python, and MySQL for scalable solutions, enhanced my ability to design and
-              integrate RESTful APIs using Mongoose and Postman, and recently started exploring Flutter for mobile
+              I&apos;ve worked with Spring Boot, Python, and MySQL for scalable solutions, enhanced my ability to design
+              and integrate RESTful APIs using Mongoose and Postman, and recently started exploring Flutter for mobile
               development. I enjoy teamwork, tackling challenges, and collaborating on exciting projects—reach out, and
               let's create something great!
             </p>
