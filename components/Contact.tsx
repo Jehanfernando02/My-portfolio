@@ -2,7 +2,7 @@
 
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
 export default function Contact() {
@@ -64,7 +64,13 @@ export default function Contact() {
                   className="flex items-center gap-4 p-4 rounded-xl hover:bg-blue-50 transition-colors"
                 >
                   <div className="bg-blue-100 p-3 rounded-full">
-                    <Image src="/assets/phone.jpg" alt="Phone" width={24} height={24} className="rounded-full" />
+                    <Image
+                      src="/assets/phone.jpg"
+                      alt="Phone"
+                      width={24}
+                      height={24}
+                      className="rounded-full"
+                    />
                   </div>
                   <div>
                     <h3 className="font-medium text-blue-800">Phone</h3>
@@ -77,26 +83,17 @@ export default function Contact() {
                   className="flex items-center gap-4 p-4 rounded-xl hover:bg-blue-50 transition-colors"
                 >
                   <div className="bg-blue-100 p-3 rounded-full">
-                    <Image src="/assets/email.jpeg" alt="Email" width={24} height={24} className="rounded-full" />
+                    <Image
+                      src="/assets/email.jpeg"
+                      alt="Email"
+                      width={24}
+                      height={24}
+                      className="rounded-full"
+                    />
                   </div>
                   <div>
                     <h3 className="font-medium text-blue-800">Email</h3>
                     <p className="text-blue-600">02jehanfernando@gmail.com</p>
-                  </div>
-                </a>
-
-                <a
-                  href="https://www.linkedin.com/in/jehan-fernando-/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 rounded-xl hover:bg-blue-50 transition-colors"
-                >
-                  <div className="bg-blue-100 p-3 rounded-full">
-                    <Image src="/assets/linkedin.webp" alt="LinkedIn" width={24} height={24} className="rounded-full" />
-                  </div>
-                  <div>
-                    <h3 className="font-medium text-blue-800">LinkedIn</h3>
-                    <p className="text-blue-600">Connect with me</p>
                   </div>
                 </a>
               </div>
@@ -107,11 +104,7 @@ export default function Contact() {
               <h3 className="text-2xl font-semibold text-blue-800 mb-6">
                 Send a Message
               </h3>
-              <form
-                ref={formRef}
-                onSubmit={sendEmail}
-                className="space-y-6"
-              >
+              <form ref={formRef} onSubmit={sendEmail} className="space-y-6">
                 <div>
                   <label
                     htmlFor="name"
@@ -179,13 +172,28 @@ export default function Contact() {
             <div className="bg-white p-6 rounded-xl shadow-2xl max-w-md w-full mx-4">
               <div className="text-center">
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-8 w-8 text-green-600"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M5 13l4 4L19 7"
+                    />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Message Sent!</h3>
-                <p className="text-gray-600 mb-6">Thank you for reaching out. I'll get back to you soon.</p>
-                <button 
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  Message Sent!
+                </h3>
+                <p className="text-gray-600 mb-6">
+                  Thank you for reaching out. I'll get back to you soon.
+                </p>
+                <button
                   onClick={() => setMessageSent(false)}
                   className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors"
                 >

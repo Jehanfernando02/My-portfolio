@@ -78,16 +78,18 @@ export default function LogoAnimation() {
   }, []);
 
   return (
-    <div className="flex justify-center items-center py-16">
+    <section className="min-h-screen flex justify-center items-center relative py-16 bg-gradient-to-br from-white via-blue-50 to-blue-100 overflow-hidden">
+      {/* Light Background Glow - Reduced opacity */}
+      <div className="absolute inset-0 hero-glow opacity-20 scale-150 bg-gradient-to-br from-blue-300/20 via-blue-400/10 to-blue-500/20"></div>
+
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1 }}
-        className="relative"
+        className="relative z-10"
       >
         <canvas ref={canvasRef} className="relative z-10" />
-        <div className="absolute inset-0 bg-gradient-to-r from-secondary/20 to-transparent rounded-full blur-3xl" />
       </motion.div>
-    </div>
+    </section>
   );
 }

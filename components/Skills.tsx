@@ -50,9 +50,10 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="py-20 relative bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200 overflow-hidden"
+      className="py-20 relative bg-gradient-to-br from-white via-blue-50 to-blue-100 overflow-hidden"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-300/40 via-transparent to-transparent opacity-70 animate-pulse"></div>
+      {/* Light Background Glow - Reduced opacity */}
+      <div className="absolute inset-0 hero-glow opacity-20 scale-150 bg-gradient-to-br from-blue-300/20 via-blue-400/10 to-blue-500/20"></div>
 
       <div className="container mx-auto px-4 relative z-10 max-w-6xl">
         <motion.h2

@@ -115,7 +115,7 @@ export default function Projects() {
       title: "Trello Clone",
       description: "A task management app with draggable task cards, customizable boards, and real-time updates.",
       image: "/assets/task.jpg",
-      category: "Individual Project",
+      category: "Ongoing Individual Project",
       details:
         "This Trello Clone provides an efficient way to organize and track tasks using a Kanban-style interface. Users can create multiple boards, add lists to categorize tasks, and use draggable task cards for seamless workflow management. The app leverages React DnD for drag-and-drop interactions, Redux for state management, and local storage for data persistence. With a clean, responsive UI built using Tailwind CSS, it ensures an optimized experience across devices. Future enhancements may include user authentication, real-time collaboration, and backend integration for cloud storage.",
       technologies: ["React", "React DnD", "Redux", "Tailwind CSS", "Local Storage", "Context API"],
