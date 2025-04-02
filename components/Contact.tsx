@@ -10,7 +10,6 @@ export default function Contact() {
   const [messageSent, setMessageSent] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Initialize EmailJS
   useEffect(() => {
     try {
       emailjs.init("Pjc44CHoEK9xSOuFo");
@@ -30,12 +29,17 @@ export default function Contact() {
       return;
     }
 
-    // Log form data before sending
     const formData = new FormData(formRef.current);
     const dataToSend = Object.fromEntries(formData);
     console.log("Form data to send:", dataToSend);
 
-    // Verify EmailJS credentials (for debugging)
+    if (!dataToSend.user_name || !dataToSend.user_email || !dataToSend.message) {
+      console.error("Missing or empty required fields:", dataToSend);
+      alert("Please fill out all fields.");
+      setIsSubmitting(false);
+      return;
+    }
+
     const serviceId = "service_r5474wa";
     const templateId = "template_83g8o88";
     const publicKey = "Pjc44CHoEK9xSOuFo";
@@ -51,12 +55,12 @@ export default function Contact() {
       },
       (error) => {
         console.error("EmailJS send failed:", {
-          message: error.message || "Unknown error",
-          status: error.status || "N/A",
-          text: error.text || "No response text",
+          status: error.status,
+          text: error.text,
+          message: error.message,
           fullError: error,
         });
-        alert("Failed to send message. Please check the console for details and try again.");
+        alert("Failed to send message. Check the console for details.");
         setIsSubmitting(false);
       },
     );
@@ -79,7 +83,7 @@ export default function Contact() {
         >
           <h2 className="text-3xl md:text-4xl font-bold text-blue-800 mb-3">Get In Touch</h2>
           <p className="text-blue-700 max-w-2xl mx-auto">
-            I'm eager to collaborate on innovative projects. Feel free to reach out.
+            I&apos;m eager to collaborate on innovative projects. Feel free to reach out.
           </p>
         </motion.div>
 
@@ -95,7 +99,7 @@ export default function Contact() {
               <div>
                 <h3 className="text-2xl font-semibold text-blue-800 mb-4">Contact Information</h3>
                 <p className="text-blue-700 mb-6">
-                  Have a question or want to work together? Here's how you can reach me directly.
+                  Have a question or want to work together? Here&apos;s how you can reach me directly.
                 </p>
               </div>
 
@@ -293,7 +297,7 @@ export default function Contact() {
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">Message Sent!</h3>
                 <p className="text-gray-600 mb-4 text-sm">
-                  Thank you for reaching out. I'll get back to you soon.
+                  Thank you for reaching out. I&apos;ll get back to you soon.
                 </p>
                 <button
                   onClick={() => setMessageSent(false)}
