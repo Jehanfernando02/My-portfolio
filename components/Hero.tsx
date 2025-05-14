@@ -140,7 +140,7 @@ export default function Hero() {
                 {/* Download Portfolio Button - One Line */}
                 <motion.a
 
-                  href="/assets/my_resume.pdf"
+                  href="/assets/JehanFernando_resume.pdf"
                   download="Jehan_Fernando_Resume.pdf"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
