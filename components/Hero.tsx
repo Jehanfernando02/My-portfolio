@@ -98,17 +98,13 @@ export default function Hero() {
             </div>
 
             <p className="max-w-xl mx-auto text-base leading-relaxed text-blue-900 sm:text-lg lg:mx-0">
-              I&apos;m a second-year Computer Science undergraduate at the Informatics Institute of Technology,
-              affiliated with the University of Westminster. I&apos;m passionate about building software that solves
-              real-world problems, with a focus on full-stack development using the MERN stack—crafting dynamic React
-              front-ends and solid Node.js-MongoDB back-ends. I also have a strong foundation in Java, Object-Oriented
-              Programming, and data structures.
+            As a second-year Computer Science undergraduate at the Informatics Institute of Technology, affiliated with the University of Westminster, I’m deeply passionate about software engineering and full-stack development, driven to create software that solves real-world problems. I excel at crafting seamless, user-friendly interfaces paired with robust, scalable back-end systems, transforming complex challenges into elegant solutions. With expertise in designing efficient APIs and exploring cross-platform mobile development, I’m a natural collaborator with a creative problem-solving mindset. Eager to contribute my skills and enthusiasm to innovative software engineering teams, I’m ready to build impactful solutions and grow as a developer. Let’s connect and create something extraordinary!
             </p>
             <p className="max-w-xl mx-auto text-base leading-relaxed text-blue-900 sm:text-lg lg:mx-0">
-              I&apos;ve worked with Spring Boot, Python, and MySQL for scalable solutions, enhanced my ability to design
-              and integrate RESTful APIs using Mongoose and Postman, and recently started exploring Flutter for mobile
-              development. I enjoy teamwork, tackling challenges, and collaborating on exciting projects—reach out, and
-              let&apos;s create something great!
+            I
+            ’m driven by a commitment to excellence and a hunger to learn in fast-paced, innovative environments. 
+            I’m eager to bring my technical expertise, adaptability, and enthusiasm to a dynamic team, contributing to impactful projects
+             that push boundaries. Let’s connect and create something remarkable together!
             </p>
           </motion.div>
 

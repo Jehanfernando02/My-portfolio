@@ -102,7 +102,7 @@ export default function Projects() {
       "id": 5,
       "title": "BookStore",
       "description": "A full-stack e-commerce application for managing books, authors, carts, and orders, featuring a RESTful API backend and a responsive React frontend.",
-      "image": "/assets/bookstore.png",
+      "image": "/assets/libronest.png",
       "category": "Individual Project",
       "details": "BookStore is an online bookstore platform that allows users to browse, add, and manage books and authors, maintain a shopping cart, and place orders. The backend, built with Java, Jersey, and Jetty, provides a REST API with endpoints for CRUD operations on books, authors, customers, carts, and orders, using an in-memory storage system. The frontend, developed with React and Tailwind CSS, offers an intuitive UI for interacting with the API. Key features include CORS support for cross-origin requests, Swagger documentation for API exploration, and sample data initialization for testing. The backend is deployed on Render, and the frontend is hosted on Vercel, with ongoing efforts to resolve deployment issues related to Docker and CORS configuration.",
       "technologies": ["Java", "Jersey", "Jetty", "Maven", "React", "Tailwind CSS", "Swagger", "Docker", "Render", "Vercel"],
