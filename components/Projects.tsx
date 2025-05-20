@@ -112,6 +112,18 @@ export default function Projects() {
 
     {
       "id": 6,
+      "title": "Plane Ticket Management",
+      "description": "A full-stack application for managing airplane seat reservations, featuring a RESTful API backend and a responsive React frontend for booking, canceling, and searching seats.",
+      "image": "/assets/plane-ticket.png",
+      "category": "Individual Project",
+      "details": "Plane Management is an application that enables users to manage airplane seat reservations, including booking, canceling, and searching for seats, as well as viewing the seating plan and ticket information. The backend, built with Spring Boot, provides a REST API with endpoints for retrieving the seating plan, booking/canceling seats, finding the first available seat, and managing tickets, using an in-memory data structure. The frontend, developed with React and Tailwind CSS, offers an intuitive UI with features like a visual seat map, forms for booking and canceling seats, and ticket search functionality. Key features include input validation, dynamic pricing based on seat position, light/dark theme support, and CORS for cross-origin requests. The backend is deployed on Render, and the frontend is hosted on Vercel.",
+      "technologies": ["Java", "Spring Boot", "React", "Tailwind CSS", "Fetch API", "Render", "Vercel"],
+      "liveLink": "https://plane-ticket-management.vercel.app/",
+      "githubLink": "https://github.com/Jehanfernando02/Plane-Ticket-Management"
+  },
+
+    {
+      "id": 7,
       "title": "Sri Lankan Supper Club",
       "description": "A vibrant event planning application tailored for Sri Lankan cultural celebrations, featuring supper plan generation, shopping lists, and a community feast board.",
       "image": "/assets/supper.png",
@@ -132,7 +144,7 @@ export default function Projects() {
       "githubLink": "https://github.com/Jehanfernando02/Supper-Club"
     },
     {
-      id: 7,
+      id: 8,
       title: "Aqua Life",
       description:
         "A website raising awareness about SDG 14, promoting ocean conservation and sustainable use of marine resources.",
@@ -148,7 +160,7 @@ export default function Projects() {
     
    
     {
-      id: 8,
+      id: 9,
       title: "Trello Clone",
       description: "A task management app with draggable task cards, customizable boards, and real-time updates.",
       image: "/assets/task.jpg",
