@@ -87,8 +87,8 @@ export default function Hero() {
 
               {/* Mobile Download Resume Button */}
               <motion.a
-                href="/assets/CV - Jehan Fernando.pdf"
-                download="Jehan Fernando-Resume.pdf"
+                href="/assets/JehanFernando-resume.pdf"
+                download="JehanFernando-resume.pdf"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-6 py-3 mt-4 font-medium text-white transition-colors bg-blue-600 rounded-lg shadow-md hover:bg-blue-700"
@@ -141,8 +141,8 @@ export default function Hero() {
                 {/* Download Portfolio Button - One Line */}
                 <motion.a
 
-                  href="/assets/JehanFernando_resume.pdf"
-                  download="Jehan_Fernando_Resume.pdf"
+                  href="/assets/JehanFernando-resume.pdf"
+                  download="JehanFernando-resume.pdf"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="px-6 py-3 mt-6 font-medium text-white transition-colors bg-blue-600 rounded-lg shadow-md hover:bg-blue-700"
