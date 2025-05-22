@@ -36,7 +36,7 @@ export default function Hero() {
             className="w-full space-y-8 text-center lg:w-3/5 lg:text-left"
           >
             <div className="inline-block px-4 py-2 text-base text-blue-600 border border-blue-200 rounded-full shadow-lg bg-white/80 sm:text-lg">
-              Hey There, I&apos;m
+              Hey There, I'm
             </div>
 
             <h1 className="text-4xl font-extrabold tracking-tight text-transparent sm:text-5xl lg:text-6xl bg-clip-text bg-gradient-to-r from-blue-600 via-blue-500 to-blue-400">
@@ -100,19 +100,19 @@ export default function Hero() {
 
             <p className="max-w-xl mx-auto text-base leading-relaxed text-blue-900 sm:text-lg lg:mx-0">
               As a second-year Computer Science undergraduate at the Informatics Institute of Technology, affiliated with the University of Westminster,
-              I&apos;m deeply passionate about software engineering and full-stack development,
+              I'm deeply passionate about software engineering and full-stack development,
               driven to create software that solves real-world problems.
               I excel at crafting seamless, user-friendly interfaces paired with robust,
               scalable back-end systems, transforming complex challenges into elegant solutions.
               With expertise in designing efficient APIs and exploring cross-platform mobile development,
-              I&apos;m a natural collaborator with a creative problem-solving mindset.
+              I'm a natural collaborator with a creative problem-solving mindset.
             </p>
             <p className="max-w-xl mx-auto text-base leading-relaxed text-blue-900 sm:text-lg lg:mx-0">
-              I&apos;m driven by a commitment to excellence and a hunger to learn in fast-paced, innovative environments.
+              I'm driven by a commitment to excellence and a hunger to learn in fast-paced, innovative environments.
               Eager to contribute my skills and enthusiasm to innovative software engineering teams,
-              I&apos;m ready to build impactful solutions and grow as a developer.
+              I'm ready to build impactful solutions and grow as a developer.
               With adaptability and a passion for collaboration, I thrive in dynamic teams,
-              contributing to impactful projects that push boundaries. Let&apos;s connect and create something remarkable together!
+              contributing to impactful projects that push boundaries. Let's connect and create something remarkable together!
             </p>
           </motion.div>
 
