@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowLeft, ExternalLink, Github, Calendar, Users, Code, Lightbulb } from "lucide-react"
+import { ArrowLeft, ExternalLink, Github, Code, Lightbulb } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { useParams } from "next/navigation"
@@ -65,16 +65,7 @@ export default function ProjectDetail() {
                   {project.category}
                 </span>
                 <h1 className="mb-4 text-4xl font-bold text-white md:text-5xl">{project.title}</h1>
-                <div className="flex items-center gap-6 text-sm text-gray-300">
-                  <div className="flex items-center gap-2">
-                    <Calendar className="w-4 h-4" />
-                    {project.duration}
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Users className="w-4 h-4" />
-                    {project.teamSize}
-                  </div>
-                </div>
+            
               </div>
             </div>
           </motion.div>
@@ -246,7 +237,7 @@ export default function ProjectDetail() {
               </motion.div>
 
               {/* Project Stats */}
-              <motion.div
+              {/* <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
@@ -261,13 +252,13 @@ export default function ProjectDetail() {
                   <div className="flex items-center justify-between">
                     <span className="text-muted">Team Size</span>
                     <span className="font-medium text-secondary">{project.teamSize}</span>
-                  </div>
+                  </div> 
                   <div className="flex items-center justify-between">
                     <span className="text-muted">Category</span>
                     <span className="font-medium text-secondary">{project.category}</span>
                   </div>
                 </div>
-              </motion.div>
+              </motion.div> */}
             </div>
           </div>
         </div>

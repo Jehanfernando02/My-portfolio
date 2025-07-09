@@ -29,6 +29,8 @@ const highlights = [
 export default function About() {
   return (
     <section id="about" className="relative py-20 overflow-hidden">
+            {/* Background Elements */}
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/10 via-transparent to-purple-900/10" />
       <div className="container relative z-10 px-6 mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -55,7 +57,7 @@ export default function About() {
               <div className="p-8 surface rounded-2xl">
                 <h3 className="mb-4 text-2xl font-bold text-primary">My Journey</h3>
                 <p className="mb-4 leading-relaxed text-secondary">
-                  As a second-year Computer Science undergraduate at the Informatics Institute of Technology, affiliated
+                  As a third-year Computer Science undergraduate at the Informatics Institute of Technology, affiliated
                   with the University of Westminster, I'm deeply passionate about software engineering and full-stack
                   development.
                 </p>

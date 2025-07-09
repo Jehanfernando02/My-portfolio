@@ -34,6 +34,8 @@ export default function Footer() {
 
   return (
     <footer className="relative py-16 overflow-hidden border-t border-indigo-500/20">
+            {/* Background Elements */}
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/10 via-transparent to-purple-900/10" />
       <div className="container relative z-10 px-6 mx-auto">
         <div className="max-w-6xl mx-auto">
           <div className="grid gap-12 mb-12 md:grid-cols-3">
@@ -116,9 +118,9 @@ export default function Footer() {
             className="pt-8 text-center border-t border-indigo-500/20"
           >
             <p className="flex items-center justify-center space-x-2 text-muted">
-              <span>© {currentYear} Jehan Fernando. Made with</span>
+              <span>© {currentYear} Jehan Fernando. All rights reserved.</span>
               <Heart className="w-4 h-4 text-red-500 animate-pulse" />
-              <span>and lots of coffee</span>
+          
             </p>
           </motion.div>
         </div>

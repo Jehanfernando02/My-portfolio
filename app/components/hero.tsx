@@ -43,8 +43,8 @@ export default function Hero() {
             {/* Text Content */}
             <div className="text-center lg:text-left">
               <motion.div variants={itemVariants} className="mb-6">
-                <span className="inline-block px-4 py-2 text-sm font-medium border rounded-full surface text-primary border-indigo-500/30">
-                  👋 Welcome to my portfolio
+                <span className="inline-block px-4 py-3 mt-8 text-sm font-medium border rounded-full surface text-primary border-indigo-500/30">
+                  Hey there! 👋 Welcome to my portfolio.
                 </span>
               </motion.div>
 
@@ -91,7 +91,7 @@ export default function Hero() {
                 {[
                   { icon: Github, href: "https://github.com/Jehanfernando02", label: "GitHub" },
                   { icon: Linkedin, href: "https://linkedin.com/in/jehan-fernando-", label: "LinkedIn" },
-                  { icon: Mail, href: "mailto:02jehanfernando@gmail.com", label: "Email" },
+                  // { icon: Mail, href: "mailto:02jehanfernando@gmail.com", label: "Email" },
                 ].map(({ icon: Icon, href, label }) => (
                   <motion.a
                     key={label}
@@ -135,7 +135,7 @@ export default function Hero() {
               transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
               className="flex flex-col items-center text-muted"
             >
-              <span className="mb-2 text-sm">Scroll to explore</span>
+              {/* <span className="mb-2 text-sm">Scroll to explore</span> */}
               <ArrowDown className="w-5 h-5" />
             </motion.div>
           </motion.div>

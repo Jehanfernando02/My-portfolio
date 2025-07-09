@@ -10,11 +10,13 @@ import { projects } from "../data/projects"
 export default function Projects() {
   const [filter, setFilter] = useState("All")
 
-  const categories = ["All", "Individual Project", "Group Project", "Ongoing Individual Project"]
+  const categories = ["All", "Individual Projects", "Group Projects"]
   const filteredProjects = filter === "All" ? projects : projects.filter((project) => project.category === filter)
 
   return (
     <section id="projects" className="relative py-20 overflow-hidden">
+            {/* Background Elements */}
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/10 via-transparent to-purple-900/10" />
       <div className="container relative z-10 px-6 mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -70,9 +72,9 @@ export default function Projects() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                   <div className="absolute top-4 right-4">
-                    <span className="px-3 py-1 text-xs font-medium text-white rounded-full bg-indigo-500/80">
+                    {/* <span className="px-3 py-1 text-xs font-medium text-white rounded-full bg-indigo-500/80">
                       {project.category}
-                    </span>
+                    </span> */}
                   </div>
                 </div>
 
@@ -86,7 +88,7 @@ export default function Projects() {
                     {project.technologies.slice(0, 3).map((tech) => (
                       <span
                         key={tech}
-                        className="px-2 py-1 text-xs text-purple-600 border rounded bg-purple-500/20 dark:text-purple-300 border-purple-500/30"
+                        className="px-2 py-1 text-xs text-purple-600 border rounded bg-purple-500/20 dark:text-purple-400 border-purple-500/30"
                       >
                         {tech}
                       </span>

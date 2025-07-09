@@ -41,6 +41,8 @@ const education = [
 export default function Experience() {
   return (
     <section id="experience" className="relative py-20 overflow-hidden">
+            {/* Background Elements */}
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/10 via-transparent to-purple-900/10" />
       <div className="container relative z-10 px-6 mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -11,10 +11,10 @@ const frontendSkills = [
   "CSS3",
   "Tailwind CSS",
   "Bootstrap",
-  "Sass",
-  "jQuery",
-  "Vue.js",
-  "Angular",
+  // "Sass",
+  // "jQuery",
+  // "Vue.js",
+  // "Angular",
 ]
 
 const backendSkills = [
@@ -25,23 +25,23 @@ const backendSkills = [
   "Python",
   "PHP",
   "REST API",
-  "GraphQL",
-  "Microservices",
+  // "GraphQL",
+  // "Microservices",
   "JWT",
-  "OAuth",
+  // "OAuth",
   "WebSockets",
 ]
 
 const databaseSkills = [
   "MongoDB",
   "MySQL",
-  "PostgreSQL",
+  // "PostgreSQL",
   "Firebase",
   "Redis",
   "SQLite",
   "Mongoose",
-  "Prisma",
-  "Sequelize",
+  // "Prisma",
+  // "Sequelize",
   "Database Design",
   "Query Optimization",
 ]
@@ -58,30 +58,30 @@ const devToolsSkills = [
   "Figma",
   "Slack",
   "Jira",
-  "Jenkins",
+  // "Jenkins",
   "CI/CD",
 ]
 
 const mobileSkills = [
   "Flutter",
-  "React Native",
+  // "React Native",
   "Dart",
   "Android Studio",
-  "iOS Development",
+  // "iOS Development",
   "Cross-platform",
   "Mobile UI/UX",
-  "App Store Deployment",
+  // "App Store Deployment",
 ]
 
 const otherSkills = [
   "Agile/Scrum",
   "Test-Driven Development",
-  "Unit Testing",
-  "Integration Testing",
+  // "Unit Testing",
+  // "Integration Testing",
   "Performance Optimization",
   "Security Best Practices",
   "Code Review",
-  "Mentoring",
+  // "Mentoring",
 ]
 
 const skillCategories = [
@@ -96,6 +96,8 @@ const skillCategories = [
 export default function Skills() {
   return (
     <section id="skills" className="relative py-20 overflow-hidden">
+            {/* Background Elements */}
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/10 via-transparent to-purple-900/10" />
       <div className="container relative z-10 px-6 mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
