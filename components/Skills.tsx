@@ -1,150 +1,201 @@
-"use client";
+"use client"
 
-import { motion } from "framer-motion";
+import { motion } from "framer-motion"
 
-interface Skill {
-  name: string;
-  color: string;
-}
+const frontendSkills = [
+  "React",
+  "Next.js",
+  "TypeScript",
+  "JavaScript",
+  "HTML5",
+  "CSS3",
+  "Tailwind CSS",
+  "Bootstrap",
+  "Sass",
+  "jQuery",
+  "Vue.js",
+  "Angular",
+]
+
+const backendSkills = [
+  "Node.js",
+  "Express.js",
+  "Spring Boot",
+  "Java",
+  "Python",
+  "PHP",
+  "REST API",
+  "GraphQL",
+  "Microservices",
+  "JWT",
+  "OAuth",
+  " EscherWebSockets",
+]
+
+const databaseSkills = [
+  "MongoDB",
+  "MySQL",
+  "PostgreSQL",
+  "Firebase",
+  "Redis",
+  "SQLite",
+  "Mongoose",
+  "Prisma",
+  "Sequelize",
+  "Database Design",
+  "Query Optimization",
+]
+
+const devToolsSkills = [
+  "Git",
+  "GitHub",
+  "VS Code",
+  "Docker",
+  "AWS",
+  "Vercel",
+  "Netlify",
+  "Postman",
+  "Figma",
+  "Slack",
+  "Jira",
+  "Jenkins",
+  "CI/CD",
+]
+
+const mobileSkills = [
+  "Flutter",
+  "React Native",
+  "Dart",
+  "Android Studio",
+  "iOS Development",
+  "Cross-platform",
+  "Mobile UI/UX",
+  "App Store Deployment",
+]
+
+const otherSkills = [
+  "Agile/Scrum",
+  "Test-Driven Development",
+  "Unit Testing",
+  "Integration Testing",
+  "Performance Optimization",
+  "Security",]
+
+// Best Practices",
+//   "Code Review",
+//   "Mentoring",
+// ]
+
+const skillCategories = [
+  { title: "Frontend Development", skills: frontendSkills, color: "from-indigo-500 to-cyan-500" },
+  { title: "Backend Development", skills: backendSkills, color: "from-indigo-500 to-cyan-500" },
+  { title: "Database & Storage", skills: databaseSkills, color: "from-indigo-500 to-cyan-500" },
+  { title: "DevOps & Tools", skills: devToolsSkills, color: "from-indigo-500 to-cyan-500" },
+  { title: "Mobile Development", skills: mobileSkills, color: "from-indigo-500 to-cyan-500" },
+  { title: "Other Skills", skills: otherSkills, color: "from-indigo-500 to-cyan-500" },
+]
 
 export default function Skills() {
-  const skills: Skill[] = [
-    { name: "Java", color: "#2563eb" },         // Rich Blue
-    { name: "JavaScript", color: "#facc15" },   // Bright Yellow
-    { name: "React", color: "#60a5fa" },        // Sky Blue
-    { name: "Tailwind CSS", color: "#38bdf8" }, // Cyan
-    { name: "MySQL", color: "#f97316" },        // Orange
-    { name: "MongoDB", color: "#10b981" },      // Emerald Green
-    { name: "Python", color: "#8b5cf6" },       // Vibrant Purple
-    { name: "Spring Boot", color: "#22c55e" },  // Lime Green
-    { name: "Node.js", color: "#2563eb" },      // Rich Blue
-    { name: "Flutter", color: "#60a5fa" },      // Sky Blue
-    { name: "REST API", color: "#ec4899" },     // Hot Pink
-    { name: "Mongoose", color: "#10b981" },     // Emerald Green
-  ];
-
-  const toolsAndTechnologies: Skill[] = [
-    { name: "GitHub", color: "#2563eb" },       // Rich Blue
-    { name: "VS Code", color: "#3b82f6" },      // Medium Blue
-    { name: "Postman", color: "#f97316" },      // Orange
-    { name: "Bootstrap", color: "#8b5cf6" },    // Vibrant Purple
-    { name: "Figma", color: "#ec4899" },        // Hot Pink
-    { name: "Vercel", color: "#60a5fa" },       // Sky Blue
-    { name: "Firebase", color: "#facc15" },     // Bright Yellow
-    { name: "Thunder Client", color: "#22c55e" }, // Lime Green
-    { name: "Slack", color: "#3b82f6" },        // Medium Blue
-    { name: "Android Studio", color: "#10b981" }, // Emerald Green
-    { name: "IntelliJ IDEA", color: "#f97316" },  // Orange
-  ];
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.05 } },
-  };
-
-  const cardVariants = {
-    hidden: { opacity: 0, scale: 0.95 },
-    visible: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: "easeOut" } },
-  };
-
   return (
-    <section
-      id="skills"
-      className="py-20 relative bg-gradient-to-br from-white via-blue-50 to-blue-100 overflow-hidden"
-    >
-      {/* Light Background Glow - Reduced opacity */}
-      <div className="absolute inset-0 hero-glow opacity-20 scale-150 bg-gradient-to-br from-blue-300/20 via-blue-400/10 to-blue-500/20"></div>
-
-      <div className="container mx-auto px-4 relative z-10 max-w-6xl">
-        <motion.h2
+    <section id="skills" className="relative py-20 overflow-hidden bg-gradient-to-br from-slate-900 via-slate-900 to-slate-900 dark:from-slate-900 dark:via-slate-900 dark:to-slate-900">
+      <div className="container relative z-10 px-6 mx-auto">
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-5xl font-extrabold mb-12 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-900 via-blue-700 to-blue-500 tracking-tight drop-shadow-lg"
+          className="mb-16 text-center"
         >
-          My Expertise
-        </motion.h2>
+          <h2 className="mb-6 text-4xl font-bold text-transparent md:text-5xl bg-gradient-to-r from-indigo-400 via-cyan-400 to-indigo-400 bg-clip-text">
+            Skills & Expertise
+          </h2>
+          <p className="max-w-3xl mx-auto text-xl text-gray-300">
+            Technologies and tools I use to bring ideas to life
+          </p>
+        </motion.div>
 
-        {/* Skills Section */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="mb-12"
-        >
-          <h3 className="text-2xl font-semibold mb-6 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-blue-700 drop-shadow-sm">
-            Technical Skills
-          </h3>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-            {skills.map((skill) => (
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {skillCategories.map((category, categoryIndex) => (
               <motion.div
-                key={skill.name}
-                variants={cardVariants}
-                whileHover={{
-                  scale: 1.1,
-                  boxShadow: `0 0 30px ${skill.color}90`,
-                  background: `linear-gradient(135deg, ${skill.color}30, #ffffffee)`,
-                }}
-                className="p-5 bg-white/95 rounded-xl border border-gray-200/50 shadow-lg flex items-center justify-center transition-all duration-300 relative overflow-hidden"
+                key={category.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
+                viewport={{ once: true }}
+                className="p-6 transition-all duration-300 border bg-white/10 backdrop-blur-lg border-indigo-500/20 rounded-2xl hover:shadow-2xl hover:shadow-indigo-500/20"
               >
-                <div
-                  className="absolute inset-0 opacity-0 hover:opacity-30 transition-opacity duration-300"
-                  style={{
-                    background: `radial-gradient(circle, ${skill.color}60, transparent)`,
-                  }}
-                />
-                <span
-                  className="relative z-10 font-bold text-base text-gray-900"
-                  style={{ textShadow: `0 0 8px ${skill.color}80` }}
-                >
-                  {skill.name}
-                </span>
+                <div className="flex items-center mb-6">
+                  <div className={`w-4 h-4 rounded-full bg-gradient-to-r ${category.color} mr-3`} />
+                  <h3 className="text-xl font-bold text-white">{category.title}</h3>
+                </div>
+
+                <div className="flex flex-wrap gap-2">
+                  {category.skills.map((skill, skillIndex) => (
+                    <motion.div
+                      key={skill}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.3, delay: categoryIndex * 0.1 + skillIndex * 0.02 }}
+                      viewport={{ once: true }}
+                      whileHover={{ scale: 1.05, y: -2 }}
+                      className="px-3 py-2 text-sm font-medium text-gray-300 transition-all border rounded-lg bg-white/5 hover:text-white border-indigo-500/20 hover:border-indigo-500/40 hover:bg-indigo-500/10"
+                    >
+                      {skill}
+                    </motion.div>
+                  ))}
+                </div>
               </motion.div>
             ))}
           </div>
-        </motion.div>
 
-        {/* Tools & Technologies Section */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          <h3 className="text-2xl font-semibold mb-6 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-blue-700 drop-shadow-sm">
-            Tools & Technologies
-          </h3>
-          <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
-            {toolsAndTechnologies.map((tool) => (
-              <motion.div
-                key={tool.name}
-                variants={cardVariants}
-                whileHover={{
-                  scale: 1.1,
-                  boxShadow: `0 0 25px ${tool.color}90`,
-                  background: `linear-gradient(135deg, ${tool.color}30, #ffffffee)`,
-                }}
-                className="p-3 bg-white/95 rounded-full border border-gray-200/50 shadow-md flex items-center justify-center transition-all duration-300 relative overflow-hidden w-36"
-              >
-                <div
-                  className="absolute inset-0 opacity-0 hover:opacity-30 transition-opacity duration-300"
-                  style={{
-                    background: `radial-gradient(circle, ${tool.color}60, transparent)`,
-                  }}
-                />
-                <span
-                  className="relative z-10 font-semibold text-sm text-gray-900"
-                  style={{ textShadow: `0 0 8px ${tool.color}80` }}
+          {/* Core Strengths */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="mt-16"
+          >
+            <h3 className="mb-8 text-2xl font-bold text-center text-white">Core Strengths</h3>
+            <div className="grid gap-6 md:grid-cols-3">
+              {[
+                {
+                  title: "Problem Solving",
+                  description: "Analytical thinking and creative solutions to complex challenges",
+                  icon: "🧠",
+                },
+                {
+                  title: "Team Collaboration",
+                  description: "Effective communication and seamless teamwork in agile environments",
+                  icon: "🤝",
+                },
+                {
+                  title: "Continuous Learning",
+                  description: "Staying updated with latest technologies and industry best practices",
+                  icon: "📚",
+                },
+              ].map((strength, index) => (
+                <motion.div
+                  key={strength.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -5 }}
+                  className="p-6 text-center transition-all border bg-white/10 backdrop-blur-lg border-indigo-500/20 rounded-xl hover:shadow-2xl hover:shadow-indigo-500/20 group"
                 >
-                  {tool.name}
-                </span>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+                  <div className="mb-4 text-4xl">{strength.icon}</div>
+                  <h4 className="mb-3 text-lg font-semibold text-white transition-all group-hover:bg-gradient-to-r group-hover:from-indigo-400 group-hover:to-cyan-400 group-hover:bg-clip-text group-hover:text-transparent">
+                    {strength.title}
+                  </h4>
+                  <p className="text-sm text-gray-300">{strength.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
-  );
+  )
 }

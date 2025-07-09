@@ -1,34 +1,53 @@
 "use client"
 
-import { useRef } from "react"
-import { motion } from "framer-motion"
-import Navbar from "../components/Navbar"
-import Hero from "../components/Hero"
-import Projects from "../components/Projects"
-import Skills from "../components/Skills"
-import Contact from "../components/Contact"
-import Footer from "../components/Footer"
-import LogoAnimation from "../components/LogoAnimation"
+import { useEffect, useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
+import Navbar from "../components/navbar"
+import Hero from "../components/hero"
+import About from "../components/about"
+import Experience from "../components/experience"
+import Projects from "../components/projects"
+import Skills from "../components/skills"
+import Contact from "../components/contact"
+import Footer from "../components/footer"
+import ParticleBackground from "../components/particle-background"
+import LoadingScreen from "../components/loading-screen"
+import ScrollProgress from "../components/scroll-progress"
 
 export default function Home() {
-  const mainRef = useRef<HTMLDivElement>(null)
+  const [loading, setLoading] = useState(true)
 
-  // Removed mouse move effect to reduce lag
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false)
+    }, 2000)
+
+    return () => clearTimeout(timer)
+  }, [])
 
   return (
-    <main ref={mainRef} className="min-h-screen overflow-hidden">
-      <Navbar />
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6 }}>
-        <Hero />
-        <div className="py-16 relative">
-          <LogoAnimation />
-        </div>
-        <Projects />
-        <Skills />
-        <Contact />
-        <Footer />
-      </motion.div>
-    </main>
+    <>
+      <AnimatePresence mode="wait">{loading && <LoadingScreen key="loading" />}</AnimatePresence>
+
+      {!loading && (
+        <motion.main
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="relative min-h-screen"
+        >
+          <ParticleBackground />
+          <ScrollProgress />
+          <Navbar />
+          <Hero />
+          <About />
+          <Experience />
+          <Projects />
+          <Skills />
+          <Contact />
+          <Footer />
+        </motion.main>
+      )}
+    </>
   )
 }
-

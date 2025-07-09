@@ -1,185 +1,162 @@
 "use client"
 
+import { motion, Variants } from "framer-motion"
+import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react"
 import Image from "next/image"
-import { motion } from "framer-motion"
 
 export default function Hero() {
-  const textVariants = {
-    hidden: { opacity: 0, x: -20 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } },
-  }
-
-  const imageVariants = {
-    hidden: { opacity: 0, scale: 0.9 },
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      scale: 1,
-      transition: { duration: 0.6, delay: 0.2, ease: "easeOut" },
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+      },
+    },
+  }
+
+  const itemVariants: Variants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.6, ease: "easeOut" },
     },
   }
 
   return (
-    <section
-      id="home"
-      className="relative flex items-center justify-center min-h-screen pt-16 overflow-hidden md:pt-20 bg-gradient-to-br from-white via-blue-50 to-blue-100"
-    >
-      {/* Light Background Glow - Reduced opacity */}
-      <div className="absolute inset-0 scale-150 hero-glow opacity-20 bg-gradient-to-br from-blue-300/20 via-blue-400/10 to-blue-500/20"></div>
+    <section id="home" className="relative flex items-center justify-center min-h-screen pt-20 overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/10 via-transparent to-purple-900/10" />
 
-      <div className="container relative z-10 max-w-6xl px-4 py-12 mx-auto sm:px-6 lg:px-8">
-        <div className="flex flex-col items-center justify-between gap-12 lg:flex-row lg:gap-16">
-          {/* Text Section */}
-          <motion.div
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
-            className="w-full space-y-8 text-center lg:w-3/5 lg:text-left"
-          >
-            <div className="inline-block px-4 py-2 text-base text-blue-600 border border-blue-200 rounded-full shadow-lg bg-white/80 sm:text-lg">
-              Hey There, I'm
-            </div>
+      {/* Floating Elements */}
+      <div className="absolute w-64 h-64 rounded-full top-1/4 left-1/4 bg-indigo-500/5 blur-3xl animate-float" />
+      <div
+        className="absolute rounded-full bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/5 blur-3xl animate-float"
+        style={{ animationDelay: "2s" }}
+      />
 
-            <h1 className="text-4xl font-extrabold tracking-tight text-transparent sm:text-5xl lg:text-6xl bg-clip-text bg-gradient-to-r from-blue-600 via-blue-500 to-blue-400">
-              Jehan Fernando
-            </h1>
+      <div className="container relative z-10 px-6 mx-auto">
+        <motion.div variants={containerVariants} initial="hidden" animate="visible" className="max-w-6xl mx-auto">
+          <div className="grid items-center gap-12 lg:grid-cols-2">
+            {/* Text Content */}
+            <div className="text-center lg:text-left">
+              <motion.div variants={itemVariants} className="mb-6">
+                <span className="inline-block px-4 py-2 text-sm font-medium border rounded-full surface text-primary border-indigo-500/30">
+                  👋 Welcome to my portfolio
+                </span>
+              </motion.div>
 
-            {/* Mobile Profile Image - Only visible on mobile */}
-            <div className="flex flex-col items-center lg:hidden">
-              <div className="relative max-w-[180px]">
-                <div className="absolute rounded-full -inset-2 bg-gradient-to-r from-blue-400/30 via-blue-500/30 to-blue-600/30 blur-lg"></div>
-                <div className="relative">
-                  <div className="absolute border border-blue-200 rounded-full shadow-md -inset-1 bg-white/80"></div>
-                  <div className="relative">
-                    <Image
-                      src="/assets/jehan.jpg"
-                      alt="Jehan Fernando"
-                      width={180}
-                      height={180}
-                      className="object-cover border-4 border-blue-300 rounded-full shadow-md"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              {/* Mobile Social Icons */}
-              <div className="flex gap-4 mt-4">
-                <motion.a
-                  href="https://linkedin.com/in/jehan-fernando-"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="p-2 transition-shadow bg-white border rounded-full shadow-md border-blue-200/50 hover:shadow-lg"
-                >
-                  <Image src="/assets/linkedin.webp" alt="LinkedIn" width={32} height={32} className="rounded-full" />
-                </motion.a>
-                <motion.a
-                  href="https://github.com/Jehanfernando02"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="p-2 transition-shadow bg-white border rounded-full shadow-md border-blue-200/50 hover:shadow-lg"
-                >
-                  <Image src="/assets/github.png" alt="GitHub" width={32} height={32} className="rounded-full" />
-                </motion.a>
-              </div>
-
-              {/* Mobile View Resume Button */}
-              <motion.a
-                href="/assets/JehanFernando-resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-6 py-3 mt-4 font-medium text-white transition-colors bg-blue-600 rounded-lg shadow-md hover:bg-blue-700"
+              <motion.h1
+                variants={itemVariants}
+                className="mb-6 text-4xl font-bold leading-tight md:text-6xl lg:text-7xl text-primary"
               >
-                View Resume
-              </motion.a>
-            </div>
+                I'm <span className="gradient-text">Jehan Fernando</span>
+              </motion.h1>
 
-            <p className="max-w-xl mx-auto text-base leading-relaxed text-blue-900 sm:text-lg lg:mx-0">
-              As a second-year Computer Science undergraduate at the Informatics Institute of Technology, affiliated with the University of Westminster,
-              I'm deeply passionate about software engineering and full-stack development,
-              driven to create software that solves real-world problems.
-              I excel at crafting seamless, user-friendly interfaces paired with robust,
-              scalable back-end systems, transforming complex challenges into elegant solutions.
-              With expertise in designing efficient APIs and exploring cross-platform mobile development,
-              I'm a natural collaborator with a creative problem-solving mindset.
-            </p>
-            <p className="max-w-xl mx-auto text-base leading-relaxed text-blue-900 sm:text-lg lg:mx-0">
-              I'm driven by a commitment to excellence and a hunger to learn in fast-paced, innovative environments.
-              Eager to contribute my skills and enthusiasm to innovative software engineering teams,
-              I'm ready to build impactful solutions and grow as a developer.
-              With adaptability and a passion for collaboration, I thrive in dynamic teams,
-              contributing to impactful projects that push boundaries. Let's connect and create something remarkable together!
-            </p>
-          </motion.div>
+              <motion.div variants={itemVariants} className="mb-8">
+                <h2 className="mb-4 text-xl md:text-2xl text-secondary">Full Stack Developer & Software Engineer</h2>
+                <p className="max-w-2xl text-lg text-muted">
+                  Passionate about crafting exceptional digital experiences with modern technologies. Currently building
+                  innovative solutions as a Full Stack Developer Intern at ICIEOS.
+                </p>
+              </motion.div>
 
-          {/* Desktop Image Section - Only visible on desktop */}
-          <motion.div
-            variants={imageVariants}
-            initial="hidden"
-            animate="visible"
-            className="flex-col items-center hidden w-full mt-12 lg:w-2/5 lg:flex lg:mt-4"
-          >
-            <div className="flex items-center gap-8">
-              <div className="relative max-w-[200px] flex flex-col items-center">
-                <div className="relative">
-                  <div className="absolute rounded-full -inset-2 bg-gradient-to-r from-blue-400/30 via-blue-500/30 to-blue-600/30 blur-lg"></div>
-                  <div className="relative">
-                    <div className="absolute border border-blue-200 rounded-full shadow-md -inset-1 bg-white/80"></div>
-                    <div className="relative">
-                      <Image
-                        src="/assets/jehan.jpg"
-                        alt="Jehan Fernando"
-                        width={200}
-                        height={200}
-                        className="object-cover border-4 border-blue-300 rounded-full shadow-md"
-                      />
-                    </div>
-                  </div>
-                </div>
+              <motion.div variants={itemVariants} className="flex flex-wrap justify-center gap-4 mb-8 lg:justify-start">
+                <motion.a
+                  href="#contact"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="flex items-center space-x-2 btn-primary"
+                >
+                  <Mail className="w-4 h-4" />
+                  <span>Get In Touch</span>
+                </motion.a>
 
-                {/* Desktop View Resume Button */}
                 <motion.a
                   href="/assets/JehanFernando-resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-6 py-3 mt-6 font-medium text-white transition-colors bg-blue-600 rounded-lg shadow-md hover:bg-blue-700"
+                  className="flex items-center px-6 py-3 space-x-2 transition-all border rounded-lg surface text-primary hover:bg-indigo-500/10 border-indigo-500/30"
                 >
-                  View Resume
+                  <Download className="w-4 h-4" />
+                  <span>Download CV</span>
                 </motion.a>
-              </div>
+              </motion.div>
 
-              {/* Social Icons - Bigger and Positioned Right */}
-              <div className="flex flex-col gap-4">
-                <motion.a
-                  href="https://linkedin.com/in/jehan-fernando-"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="p-2 transition-shadow bg-white border rounded-full shadow-md border-blue-200/50 hover:shadow-lg"
-                >
-                  <Image src="/assets/linkedin.webp" alt="LinkedIn" width={40} height={40} className="rounded-full" />
-                </motion.a>
-                <motion.a
-                  href="https://github.com/Jehanfernando02"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="p-2 transition-shadow bg-white border rounded-full shadow-md border-blue-200/50 hover:shadow-lg"
-                >
-                  <Image src="/assets/github.png" alt="GitHub" width={40} height={40} className="rounded-full" />
-                </motion.a>
-              </div>
+              <motion.div variants={itemVariants} className="flex justify-center space-x-6 lg:justify-start">
+                {[
+                  { icon: Github, href: "https://github.com/Jehanfernando02", label: "GitHub" },
+                  { icon: Linkedin, href: "https://linkedin.com/in/jehan-fernando-", label: "LinkedIn" },
+                  { icon: Mail, href: "mailto:02jehanfernando@gmail.com", label: "Email" },
+                ].map(({ icon: Icon, href, label }) => (
+                  <motion.a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.2, y: -2 }}
+                    whileTap={{ scale: 0.9 }}
+                    className="p-3 transition-all rounded-full surface hover:bg-indigo-500/20 group"
+                  >
+                    <Icon className="w-5 h-5 transition-colors text-muted group-hover:text-primary" />
+                  </motion.a>
+                ))}
+              </motion.div>
             </div>
+
+            {/* Profile Image - Made smaller and shows full image */}
+            <motion.div variants={itemVariants} className="flex justify-center lg:justify-end">
+              <div className="relative">
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 blur-2xl opacity-20 animate-pulse-glow" />
+                <div className="relative w-64 h-64 p-1 overflow-hidden rounded-full bg-gradient-to-r from-indigo-500 to-purple-500">
+                  <div className="w-full h-full overflow-hidden rounded-full surface">
+                    <Image
+                      src="/assets/jehan.jpg"
+                      alt="Jehan Fernando"
+                      width={256}
+                      height={256}
+                      className="object-cover w-full h-full"
+                      priority
+                    />
+                  </div>
+                </div>
+
+                {/* Floating badges */}
+                <motion.div
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+                  className="absolute px-3 py-1 text-xs font-bold text-white rounded-full -top-4 -right-4 bg-gradient-to-r from-indigo-500 to-purple-500"
+                >
+                  Available for hire
+                </motion.div>
+
+                <motion.div
+                  animate={{ y: [0, 10, 0] }}
+                  transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, delay: 1 }}
+                  className="absolute px-3 py-1 text-xs font-bold text-white rounded-full -bottom-4 -left-4 bg-gradient-to-r from-purple-500 to-indigo-500"
+                >
+                  Full Stack Dev
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Scroll Indicator */}
+          <motion.div variants={itemVariants} className="absolute transform -translate-x-1/2 bottom-8 left-1/2">
+            <motion.div
+              animate={{ y: [0, 10, 0] }}
+              transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+              className="flex flex-col items-center text-muted"
+            >
+              <span className="mb-2 text-sm">Scroll to explore</span>
+              <ArrowDown className="w-5 h-5" />
+            </motion.div>
           </motion.div>
-        </div>
+        </motion.div>
       </div>
     </section>
   )

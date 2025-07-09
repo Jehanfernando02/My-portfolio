@@ -1,23 +1,35 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter } from 'next/font/google'
+import { Inter } from "next/font/google"
 import "./globals.css"
+import { ThemeProvider } from "../components/theme-provider"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Jehan's Portfolio",
-  description: "A stunning portfolio website showcasing my work and skills",
+  title: "Jehan Fernando - Full Stack Developer",
+  description: "Passionate Full Stack Developer crafting exceptional digital experiences with modern technologies",
+  keywords: "Full Stack Developer, React, Node.js, JavaScript, Web Development, Software Engineer",
+  authors: [{ name: "Jehan Fernando" }],
+  openGraph: {
+    title: "Jehan Fernando - Full Stack Developer",
+    description: "Passionate Full Stack Developer crafting exceptional digital experiences",
+    type: "website",
+  },
 }
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={inter.className}>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange={false}>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   )
 }
