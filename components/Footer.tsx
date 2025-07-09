@@ -33,7 +33,7 @@ export default function Footer() {
   ]
 
   return (
-    <footer className="relative py-16 overflow-hidden border-t border-purple-500/20">
+    <footer className="relative py-16 overflow-hidden border-t border-indigo-500/20">
       <div className="container relative z-10 px-6 mx-auto">
         <div className="max-w-6xl mx-auto">
           <div className="grid gap-12 mb-12 md:grid-cols-3">
@@ -46,7 +46,7 @@ export default function Footer() {
               className="space-y-4"
             >
               <div className="flex items-center space-x-3">
-                <div className="flex items-center justify-center w-10 h-10 font-bold text-white rounded-full bg-gradient-to-r from-purple-500 to-cyan-500 animate-pulse-glow">
+                <div className="flex items-center justify-center w-10 h-10 font-bold text-white rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 animate-pulse-glow">
                   JF
                 </div>
                 <span className="text-xl font-bold gradient-text">Jehan Fernando</span>
@@ -98,7 +98,7 @@ export default function Footer() {
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.9 }}
-                    className="p-3 transition-all rounded-full surface hover:bg-purple-500/20 group"
+                    className="p-3 transition-all rounded-full surface hover:bg-indigo-500/20 group"
                   >
                     <social.icon className="w-5 h-5 transition-colors text-muted group-hover:text-primary" />
                   </motion.a>
@@ -113,7 +113,7 @@ export default function Footer() {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
-            className="pt-8 text-center border-t border-purple-500/20"
+            className="pt-8 text-center border-t border-indigo-500/20"
           >
             <p className="flex items-center justify-center space-x-2 text-muted">
               <span>© {currentYear} Jehan Fernando. Made with</span>

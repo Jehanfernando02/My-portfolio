@@ -29,6 +29,8 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50)
+
+      // Update active section
       const sections = navItems.map((item) => item.href.substring(1))
       const scrollPosition = window.scrollY + 100
 
@@ -67,12 +69,14 @@ export default function Navbar() {
       >
         <div className="container flex items-center justify-between px-6 mx-auto">
           {/* Logo */}
-          <motion.div whileHover={{ scale: 1.05 }} className="flex items-center space-x-3">
-            <div className="flex items-center justify-center w-10 h-10 font-bold text-white rounded-full bg-gradient-to-r from-indigo-500 to-cyan-500 animate-pulse-glow">
-              JF
-            </div>
-            <span className="text-xl font-bold gradient-text">Jehan Fernando</span>
-          </motion.div>
+          <Link href="/" className="flex items-center space-x-3">
+            <motion.div whileHover={{ scale: 1.05 }} className="flex items-center space-x-3 cursor-pointer">
+              <div className="flex items-center justify-center w-10 h-10 font-bold text-white rounded-full bg-gradient-to-r from-purple-500 to-cyan-500 animate-pulse-glow">
+                JF
+              </div>
+              <span className="text-xl font-bold gradient-text">Jehan Fernando</span>
+            </motion.div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="items-center hidden space-x-1 md:flex">
@@ -88,7 +92,7 @@ export default function Navbar() {
                 {activeSection === item.href.substring(1) && (
                   <motion.div
                     layoutId="activeSection"
-                    className="absolute inset-0 border rounded-lg bg-gradient-to-r from-indigo-500/10 to-cyan-500/10 border-indigo-500/20"
+                    className="absolute inset-0 border rounded-lg bg-gradient-to-r from-purple-500/10 to-cyan-500/10 border-purple-500/20"
                     transition={{ type: "spring", duration: 0.6 }}
                   />
                 )}
@@ -103,20 +107,20 @@ export default function Navbar() {
               whileTap={{ scale: 0.9 }}
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               className={`p-2 rounded-full transition-colors ${
-                theme === "dark" ? "glass-dark hover:bg-indigo-500/20" : "glass-light hover:bg-indigo-500/10"
+                theme === "dark" ? "glass-dark hover:bg-purple-500/20" : "glass-light hover:bg-purple-500/10"
               }`}
             >
               {theme === "dark" ? (
-                <Sun className="w-5 h-5 text-cyan-400" />
+                <Sun className="w-5 h-5 text-yellow-400" />
               ) : (
-                <Moon className="w-5 h-5 text-indigo-600" />
+                <Moon className="w-5 h-5 text-purple-600" />
               )}
             </motion.button>
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className={`md:hidden p-2 rounded-full transition-colors ${
-                theme === "dark" ? "glass-dark hover:bg-indigo-500/20" : "glass-light hover:bg-indigo-500/10"
+                theme === "dark" ? "glass-dark hover:bg-purple-500/20" : "glass-light hover:bg-purple-500/10"
               }`}
             >
               {mobileMenuOpen ? <X className="w-5 h-5 text-primary" /> : <Menu className="w-5 h-5 text-primary" />}

@@ -5,7 +5,7 @@ import { ArrowLeft, ExternalLink, Github, Calendar, Users, Code, Lightbulb } fro
 import Image from "next/image"
 import Link from "next/link"
 import { useParams } from "next/navigation"
-import { projects } from "../../data/projects"
+import { projects } from "../../data/projects" // Adjust the import path as necessary
 import ParticleBackground from "../../../components/particle-background"
 import Navbar from "../../../components/navbar"
 
@@ -57,7 +57,7 @@ export default function ProjectDetail() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mb-12"
           >
-            <div className="relative mb-8 overflow-hidden h-96 rounded-2xl">
+            <div className="relative h-64 mb-8 overflow-hidden rounded-2xl">
               <Image src={project.image || "/placeholder.svg"} alt={project.title} fill className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
               <div className="absolute bottom-8 left-8 right-8">

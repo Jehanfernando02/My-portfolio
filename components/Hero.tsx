@@ -1,6 +1,6 @@
 "use client"
 
-import { motion, Variants } from "framer-motion"
+import { motion, type Variants } from "framer-motion"
 import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react"
 import Image from "next/image"
 
@@ -56,7 +56,7 @@ export default function Hero() {
               </motion.h1>
 
               <motion.div variants={itemVariants} className="mb-8">
-                <h2 className="mb-4 text-xl md:text-2xl text-secondary">Full Stack Developer & Software Engineer</h2>
+                <h2 className="mb-4 text-xl md:text-2xl text-secondary">Full Stack Developer</h2>
                 <p className="max-w-2xl text-lg text-muted">
                   Passionate about crafting exceptional digital experiences with modern technologies. Currently building
                   innovative solutions as a Full Stack Developer Intern at ICIEOS.
@@ -108,39 +108,22 @@ export default function Hero() {
               </motion.div>
             </div>
 
-            {/* Profile Image - Made smaller and shows full image */}
+            {/* Profile Image - Oval shape for better fit */}
             <motion.div variants={itemVariants} className="flex justify-center lg:justify-end">
               <div className="relative">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 blur-2xl opacity-20 animate-pulse-glow" />
-                <div className="relative w-64 h-64 p-1 overflow-hidden rounded-full bg-gradient-to-r from-indigo-500 to-purple-500">
-                  <div className="w-full h-full overflow-hidden rounded-full surface">
+                <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 blur-2xl opacity-20 animate-pulse-glow rounded-[50%]" />
+                <div className="relative w-64 h-80 p-1 overflow-hidden bg-gradient-to-r from-indigo-500 to-purple-500 rounded-[50%]">
+                  <div className="w-full h-full overflow-hidden rounded-[50%]">
                     <Image
                       src="/assets/jehan.jpg"
                       alt="Jehan Fernando"
                       width={256}
-                      height={256}
+                      height={320}
                       className="object-cover w-full h-full"
                       priority
                     />
                   </div>
                 </div>
-
-                {/* Floating badges */}
-                <motion.div
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-                  className="absolute px-3 py-1 text-xs font-bold text-white rounded-full -top-4 -right-4 bg-gradient-to-r from-indigo-500 to-purple-500"
-                >
-                  Available for hire
-                </motion.div>
-
-                <motion.div
-                  animate={{ y: [0, 10, 0] }}
-                  transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, delay: 1 }}
-                  className="absolute px-3 py-1 text-xs font-bold text-white rounded-full -bottom-4 -left-4 bg-gradient-to-r from-purple-500 to-indigo-500"
-                >
-                  Full Stack Dev
-                </motion.div>
               </div>
             </motion.div>
           </div>

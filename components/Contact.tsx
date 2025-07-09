@@ -94,9 +94,9 @@ export default function Contact() {
                       transition={{ duration: 0.6, delay: index * 0.1 }}
                       viewport={{ once: true }}
                       whileHover={{ x: 5 }}
-                      className="flex items-center p-4 space-x-4 transition-all rounded-xl hover:bg-purple-500/10 group"
+                      className="flex items-center p-4 space-x-4 transition-all rounded-xl hover:bg-indigo-500/10 group"
                     >
-                      <div className="flex items-center justify-center w-12 h-12 transition-transform rounded-full bg-gradient-to-r from-purple-500 to-cyan-500 group-hover:scale-110">
+                      <div className="flex items-center justify-center w-12 h-12 transition-transform rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 group-hover:scale-110">
                         <info.icon className="w-5 h-5 text-white" />
                       </div>
                       <div>
@@ -132,7 +132,7 @@ export default function Contact() {
                       id="user_name"
                       name="user_name"
                       required
-                      className="w-full px-4 py-3 transition-colors border rounded-lg surface border-purple-500/30 text-primary placeholder-muted focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500"
+                      className="w-full px-4 py-3 transition-colors border rounded-lg surface border-indigo-500/30 text-primary placeholder-muted focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
                       placeholder="Your name"
                     />
                   </div>
@@ -145,7 +145,7 @@ export default function Contact() {
                       id="user_email"
                       name="user_email"
                       required
-                      className="w-full px-4 py-3 transition-colors border rounded-lg surface border-purple-500/30 text-primary placeholder-muted focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500"
+                      className="w-full px-4 py-3 transition-colors border rounded-lg surface border-indigo-500/30 text-primary placeholder-muted focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
                       placeholder="your.email@example.com"
                     />
                   </div>
@@ -160,7 +160,7 @@ export default function Contact() {
                     id="subject"
                     name="subject"
                     required
-                    className="w-full px-4 py-3 transition-colors border rounded-lg surface border-purple-500/30 text-primary placeholder-muted focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500"
+                    className="w-full px-4 py-3 transition-colors border rounded-lg surface border-indigo-500/30 text-primary placeholder-muted focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
                     placeholder="Project discussion"
                   />
                 </div>
@@ -174,7 +174,7 @@ export default function Contact() {
                     name="message"
                     rows={5}
                     required
-                    className="w-full px-4 py-3 transition-colors border rounded-lg resize-none surface border-purple-500/30 text-primary placeholder-muted focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500"
+                    className="w-full px-4 py-3 transition-colors border rounded-lg resize-none surface border-indigo-500/30 text-primary placeholder-muted focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
                     placeholder="Tell me about your project..."
                   />
                 </div>
@@ -184,7 +184,7 @@ export default function Contact() {
                   disabled={isSubmitting}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="flex items-center justify-center w-full py-3 space-x-2 font-medium text-white transition-all rounded-lg bg-gradient-to-r from-purple-500 to-cyan-500 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="flex items-center justify-center w-full py-3 space-x-2 font-medium text-white transition-all rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? (
                     <>
