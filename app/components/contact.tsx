@@ -223,6 +223,7 @@ export default function Contact() {
           </motion.div>
         )}
       </AnimatePresence>
+      
     </section>
   )
 }
