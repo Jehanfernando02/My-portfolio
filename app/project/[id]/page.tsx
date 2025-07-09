@@ -6,8 +6,8 @@ import Image from "next/image"
 import Link from "next/link"
 import { useParams } from "next/navigation"
 import { projects } from "../../data/projects" // Adjust the import path as necessary
-import ParticleBackground from "../../../components/particle-background"
-import Navbar from "../../../components/navbar"
+import ParticleBackground from "../../components/particle-background"
+import Navbar from "../../components/navbar"
 
 export default function ProjectDetail() {
   const params = useParams()

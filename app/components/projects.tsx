@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { ExternalLink, Github, ArrowRight } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import { projects } from "../app/data/projects"
+import { projects } from "../data/projects"
 
 export default function Projects() {
   const [filter, setFilter] = useState("All")
