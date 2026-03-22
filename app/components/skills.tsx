@@ -58,7 +58,7 @@ const devToolsSkills = [
   "Figma",
   "Slack",
   "Jira",
-  // "Jenkins",
+  "Jenkins",
   "CI/CD",
 ]
 
