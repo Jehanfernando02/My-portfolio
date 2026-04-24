@@ -56,10 +56,10 @@ export default function Hero() {
               </motion.h1>
 
               <motion.div variants={itemVariants} className="mb-8">
-                <h2 className="mb-4 text-xl md:text-2xl text-secondary">Full Stack Developer</h2>
+                <h2 className="mb-4 text-xl md:text-2xl text-secondary">Full-Stack Developer | DevOps & Cloud Enthusiast</h2>
                 <p className="max-w-2xl text-lg text-muted">
-                  Passionate about crafting exceptional digital experiences with modern technologies. Currently building
-                  innovative solutions as a Full Stack Developer Intern at ICIEOS.
+                  Passionate about building and deploying scalable applications using modern technologies. Currently working as a Full-Stack Developer Intern at ICIEOS, 
+                  focusing on both application development and real-world deployment workflows.
                 </p>
               </motion.div>
 

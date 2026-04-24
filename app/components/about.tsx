@@ -57,9 +57,8 @@ export default function About() {
               <div className="p-8 surface rounded-2xl">
                 <h3 className="mb-4 text-2xl font-bold text-primary">My Journey</h3>
                 <p className="mb-4 leading-relaxed text-secondary">
-                  As a third-year Computer Science undergraduate at the Informatics Institute of Technology, affiliated
-                  with the University of Westminster, I'm deeply passionate about software engineering and full-stack
-                  development.
+                  As a third-year Computer Science undergraduate at the Informatics Institute of Technology (affiliated with the University of Westminster), 
+                  I’m passionate about software engineering, full-stack development, and DevOps practices.
                 </p>
                 <p className="mb-4 leading-relaxed text-secondary">
                   I excel at crafting seamless, user-friendly interfaces paired with robust, scalable back-end systems,
