@@ -1,27 +1,24 @@
 ✨ Modern Portfolio
-Next.jsTypeScriptTailwind CSSFramer Motion
+Next.js · TypeScript · Tailwind CSS · Framer Motion
 
-A stunning, modern portfolio website built with Next.js, TypeScript, and Tailwind CSS. Features beautiful animations, responsive design, and a dark theme with purple accents.
-
-Portfolio Preview
+A modern, responsive portfolio built with Next.js, TypeScript, and Tailwind CSS. Includes smooth animations, dark theme with purple accents, and optimized performance.
 
 🚀 Features
-Modern Design - Dark theme with purple accents and glowing effects
-Responsive Layout - Looks great on all devices from mobile to desktop
-Stunning Animations - Powered by Framer Motion for smooth transitions and effects
-Interactive Components - Project modals, skill bars, and contact form
-Performance Optimized - Fast loading times with Next.js App Router
-SEO Friendly - Proper metadata and semantic HTML
-TypeScript - Type-safe code for better developer experience
-Easy to Customize - Well-organized code structure
+
+Modern dark UI with purple glow accents
+Fully responsive design (mobile → desktop)
+Smooth animations using Framer Motion
+Interactive components (modals, skill bars, contact form)
+Optimized performance with Next.js App Router
+SEO-friendly structure and metadata
+Type-safe development with TypeScript
+Clean, customizable codebase
+
 📋 Sections
-Hero - Eye-catching introduction with animated elements
-About/Experience - Work history and personal information
-Projects - Showcase your best work with detailed modals
-Skills - Visual representation of your technical skills
-Contact - Contact form and social media links
-Animated Logo - Custom canvas animation for your brand
-🛠️ Installation
-Clone the repository
-git clone https://github.com/yourusername/modern-portfolio.git
-cd modern-portfolio
+
+Hero section with animated intro
+About & experience overview
+Projects showcase with modals
+Skills visualization
+Contact form & social links
+Animated logo branding
