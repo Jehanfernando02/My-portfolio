@@ -425,57 +425,6 @@ export const projects: Project[] = [
   },
   {
     id: 8,
-    title: "Sri Lankan Supper Club (Ongoing)",
-    description:
-      "A vibrant event planning application tailored for Sri Lankan cultural celebrations, featuring supper plan generation, shopping lists, and a community feast board.",
-    image: "/assets/supper.png",
-    category: "Ongoing Individual Projects",
-    details:
-      "Sri Lankan Supper Club offers a delightful way to plan events with culturally rich supper plans, including menus, ambience, and music for occasions like Avurudu, Vesak, and weddings. It includes a dynamic shopping list generator, a feast board for sharing plans, event preparation timelines, and a festival calendar, all enhanced with smooth animations and responsive design.",
-    technologies: [
-      "React",
-      "Node.js",
-      "Express",
-      "MongoDB",
-      "Mongoose",
-      "Axios",
-      "Framer Motion",
-      "Tailwind CSS",
-      "JavaScript (ES6+)",
-    ],
-    features: [
-      "Cultural event planning for Sri Lankan celebrations",
-      "Dynamic menu generation based on occasion type",
-      "Shopping list generator with ingredient calculations",
-      "Community feast board for sharing event plans",
-      "Event preparation timeline and task management",
-      "Festival calendar with cultural significance",
-      "Smooth animations with Framer Motion",
-      "Recipe suggestions and cooking instructions",
-    ],
-    challenges: [
-      "Researching and implementing authentic Sri Lankan cultural elements",
-      "Creating dynamic menu generation algorithms",
-      "Implementing complex animation sequences",
-      "Managing cultural data and festival information",
-      "Creating engaging user experience for cultural content",
-      "Balancing traditional elements with modern UI design",
-    ],
-    learnings: [
-      "Cultural research and authentic content creation",
-      "Advanced animation techniques with Framer Motion",
-      "MongoDB database design for cultural content",
-      "Express.js server development and API creation",
-      "User experience design for cultural applications",
-      "Content management for dynamic cultural data",
-      "Community features and user-generated content",
-      "Responsive design for cultural applications",
-    ],
-    liveLink: "/",
-    githubLink: "https://github.com/Jehanfernando02/Supper-Club",
-  },
-  {
-    id: 8,
     title: "Aqua Life",
     description:
       "A website raising awareness about SDG 14, promoting ocean conservation and sustainable use of marine resources.",
@@ -515,4 +464,66 @@ export const projects: Project[] = [
     liveLink: "http://aqualife.kesug.com/",
     githubLink: "https://github.com/nethsuka/WDGP_coursework",
   },
+  {
+  id: 9,
+  title: "ForgeAI (In Progress)",
+  description:
+    "ForgeAI is an AI-powered personal coaching platform that uses a multi-agent system to deliver highly personalized fitness coaching with long-term memory and real-time adaptive recommendations.",
+  image: "/assets/forgeai.png",
+  category: "Individual Projects",
+  details:
+    "ForgeAI is a full-stack AI personal coaching platform built using a multi-agent architecture designed to simulate a real coaching team instead of a single chatbot. The system consists of 6 specialized AI agents — Workout Planner, Nutrition Agent, Progress Analyst, Recovery Agent, Motivational Coach, and a Supervisor agent that orchestrates them. Each agent focuses on a specific aspect of fitness coaching and collaborates in real time to generate personalized responses.\n\nWhat makes ForgeAI unique is its semantic memory system. Every workout, goal, injury, or user preference is stored in a vector database (ChromaDB) and retrieved through a RAG pipeline. This allows the system to remember users across sessions and continuously improve recommendations based on long-term context.\n\nThe backend is built with Python and Flask, using LangChain and LangGraph for multi-agent orchestration, while Google Gemini 2.5 Flash serves as the core LLM. The frontend is developed with React, featuring real-time WebSocket updates, progress visualization with Recharts, and an interactive agent activity panel that shows how each response is generated.",
+  technologies: [
+    "React",
+    "WebSocket",
+    "Recharts",
+    "Tailwind CSS",
+    "Python",
+    "Flask",
+    "LangChain",
+    "LangGraph",
+    "Google Gemini 2.5 Flash",
+    "ChromaDB",
+    "SQLite",
+    "PostgreSQL",
+    "Docker",
+    "LangSmith"
+  ],
+  features: [
+    "Multi-agent AI system with 6 specialized coaching agents",
+    "Supervisor-based orchestration for intelligent agent coordination",
+    "Semantic long-term memory using ChromaDB vector database",
+    "RAG-based personalized coaching using user history retrieval",
+    "Workout planning with progressive overload tracking",
+    "Nutrition analysis with TDEE and macro calculations",
+    "Recovery monitoring with overtraining risk detection",
+    "Progress analytics with trend detection and PR identification",
+    "Motivational coaching for psychological support and burnout prevention",
+    "Real-time WebSocket streaming of AI responses",
+    "Interactive dashboard with progress charts and analytics",
+    "Agent activity panel showing live decision-making process",
+    "Full-stack CI/CD deployment with Docker, Render, and Vercel"
+  ],
+  challenges: [
+    "Designing a multi-agent system that collaborates effectively instead of producing isolated responses",
+    "Implementing semantic memory with ChromaDB and integrating it into real-time RAG pipelines",
+    "Orchestrating agent workflows using LangGraph while maintaining response consistency",
+    "Balancing context injection from memory without overwhelming LLM prompts",
+    "Ensuring real-time performance with WebSocket streaming and multiple agent execution paths",
+    "Structuring a scalable backend that separates agent logic, tools, and memory layers",
+    "Managing cost and latency while using advanced LLM calls across multiple agents"
+  ],
+  learnings: [
+    "Multi-agent AI system design and orchestration using LangGraph",
+    "Retrieval-Augmented Generation (RAG) with vector databases",
+    "Semantic memory systems using embeddings and ChromaDB",
+    "LLM workflow engineering and prompt chaining strategies",
+    "Real-time WebSocket communication in full-stack applications",
+    "LLMOps practices including tracing, monitoring, and cost optimization",
+    "Advanced backend architecture using Flask and modular service design",
+    "End-to-end deployment of AI systems using Docker and CI/CD pipelines"
+  ],
+  liveLink: "https://forge-ai-jet.vercel.app/",
+  githubLink: "https://github.com/Jehanfernando02/ForgeAI"
+}
 ]
