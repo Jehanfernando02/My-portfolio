@@ -259,12 +259,14 @@ export default function Skills() {
             viewport={{ once: true }}
             className="mt-16"
           >
-            <div className="grid gap-6 md:grid-cols-4">
+            <div className="grid gap-6 md:grid-cols-3 lg:grid-cols-6">
               {[
                 { label: "Frontend Technologies", count: frontendSkills.length, color: "indigo" },
                 { label: "Backend Technologies", count: backendSkills.length, color: "purple" },
                 { label: "Database Systems", count: databaseSkills.length, color: "indigo" },
-                { label: "Development Tools", count: devOpsSkills.length + toolsSkills.length, color: "purple" },
+                { label: "DevOps", count: devOpsSkills.length, color: "red" },
+                { label: "AI & ML", count: aiMLSkills.length, color: "pink" },
+                { label: "Tools & Integrations", count: toolsSkills.length + apiIntegrationSkills.length, color: "purple" },
               ].map((stat, index) => (
                 <motion.div
                   key={stat.label}
