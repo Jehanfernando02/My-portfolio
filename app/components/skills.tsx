@@ -264,7 +264,7 @@ export default function Skills() {
                 { label: "Frontend Technologies", count: frontendSkills.length, color: "indigo" },
                 { label: "Backend Technologies", count: backendSkills.length, color: "purple" },
                 { label: "Database Systems", count: databaseSkills.length, color: "indigo" },
-                { label: "Development Tools", count: devToolsSkills.length, color: "purple" },
+                { label: "Development Tools", count: devOpsSkills.length + toolsSkills.length, color: "purple" },
               ].map((stat, index) => (
                 <motion.div
                   key={stat.label}
