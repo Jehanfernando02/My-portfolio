@@ -5,12 +5,15 @@ import { motion } from "framer-motion"
 const frontendSkills = [
   "React",
   "Next.js",
+  "Vite",
   "TypeScript",
   "JavaScript",
   "HTML5",
   "CSS3",
   "Tailwind CSS",
   "Bootstrap",
+  "Redux",
+  "Axios",
   // "Sass",
   // "jQuery",
   // "Vue.js",
@@ -21,24 +24,29 @@ const backendSkills = [
   "Node.js",
   "Express.js",
   "Spring Boot",
+  "FastAPI",
+  "Flask",
   "Java",
   "Python",
   "PHP",
   "REST API",
+  "WebSockets",
+  "JWT",
+  "RBAC",
   // "GraphQL",
   // "Microservices",
-  "JWT",
   // "OAuth",
-  "WebSockets",
 ]
 
 const databaseSkills = [
   "MongoDB",
   "MySQL",
-  // "PostgreSQL",
+  "PostgreSQL",
   "Firebase",
+  "Supabase",
   "Redis",
   "SQLite",
+  "ChromaDB",
   "Mongoose",
   // "Prisma",
   // "Sequelize",
@@ -49,17 +57,23 @@ const databaseSkills = [
 const devToolsSkills = [
   "Git",
   "GitHub",
+  "GitHub Actions",
   "VS Code",
   "Docker",
   "AWS",
+  "Azure",
   "Vercel",
   "Netlify",
+  "Nginx",
   "Postman",
+  "Swagger",
   "Figma",
   "Slack",
   "Jira",
   "Jenkins",
   "CI/CD",
+  "n8n",
+  "Stripe",
 ]
 
 const mobileSkills = [
@@ -73,14 +87,41 @@ const mobileSkills = [
   // "App Store Deployment",
 ]
 
+const aiMLSkills = [
+  "LangChain",
+  "LangGraph",
+  "Gemini API",
+  "ChromaDB",
+  "Vector Databases",
+  "RAG (Retrieval-Augmented Generation)",
+  "MCP Protocol",
+  "AI Agent Architecture",
+  "Prompt Engineering",
+]
+
+const apiIntegrationSkills = [
+  "RESTful API Design",
+  "Google Calendar API",
+  "Payment Integration (Stripe)",
+  "Azure Blob Storage",
+  "Third-party API Integration",
+  "API Documentation",
+  "Error Handling & Logging",
+  "Rate Limiting",
+]
+
 const otherSkills = [
   "Agile/Scrum",
   "Test-Driven Development",
-  // "Unit Testing",
-  // "Integration Testing",
   "Performance Optimization",
   "Security Best Practices",
   "Code Review",
+  "Multi-threading",
+  "WebSocket Architecture",
+  "RBAC (Authorization)",
+  "Authentication (Clerk)",
+  // "Unit Testing",
+  // "Integration Testing",
   // "Mentoring",
 ]
 
@@ -90,6 +131,8 @@ const skillCategories = [
   { title: "Database & Storage", skills: databaseSkills, color: "from-indigo-600 to-purple-600" },
   { title: "DevOps & Tools", skills: devToolsSkills, color: "from-purple-600 to-indigo-600" },
   { title: "Mobile Development", skills: mobileSkills, color: "from-indigo-500 to-purple-400" },
+  { title: "AI & Machine Learning", skills: aiMLSkills, color: "from-pink-500 to-rose-500" },
+  { title: "API & Integration", skills: apiIntegrationSkills, color: "from-orange-500 to-amber-500" },
   { title: "Other Skills", skills: otherSkills, color: "from-purple-400 to-indigo-500" },
 ]
 
