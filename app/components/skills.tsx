@@ -261,12 +261,12 @@ export default function Skills() {
           >
             <div className="grid gap-6 md:grid-cols-3 lg:grid-cols-6">
               {[
-                { label: "Frontend Technologies", count: frontendSkills.length, color: "indigo" },
-                { label: "Backend Technologies", count: backendSkills.length, color: "purple" },
-                { label: "Database Systems", count: databaseSkills.length, color: "indigo" },
-                { label: "DevOps", count: devOpsSkills.length, color: "red" },
-                { label: "AI & ML", count: aiMLSkills.length, color: "pink" },
-                { label: "Tools & Integrations", count: toolsSkills.length + apiIntegrationSkills.length, color: "purple" },
+                { label: "Frontend Technologies", count: frontendSkills.length, colorClass: "text-indigo-500" },
+                { label: "Backend Technologies", count: backendSkills.length, colorClass: "text-purple-500" },
+                { label: "Database Systems", count: databaseSkills.length, colorClass: "text-indigo-500" },
+                { label: "DevOps", count: devOpsSkills.length, colorClass: "text-red-500" },
+                { label: "AI & ML", count: aiMLSkills.length, colorClass: "text-pink-500" },
+                { label: "Tools & Integrations", count: toolsSkills.length + apiIntegrationSkills.length, colorClass: "text-purple-500" },
               ].map((stat, index) => (
                 <motion.div
                   key={stat.label}
@@ -276,7 +276,7 @@ export default function Skills() {
                   viewport={{ once: true }}
                   className="p-6 text-center transition-all surface rounded-xl hover:bg-indigo-500/5"
                 >
-                  <div className={`text-3xl font-bold text-${stat.color}-500 mb-2`}>{stat.count}+</div>
+                  <div className={`text-3xl font-bold ${stat.colorClass} mb-2`}>{stat.count}+</div>
                   <p className="text-sm text-muted">{stat.label}</p>
                 </motion.div>
               ))}
