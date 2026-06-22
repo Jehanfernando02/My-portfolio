@@ -654,6 +654,6 @@ export const projects: Project[] = [
       "Deployment and hosting on Vercel with automatic deployments",
       "Accessible design principles for interactive components",
     ],
-
+    liveLink: "https://jehanfdo.vercel.app/",
   },
 ]
