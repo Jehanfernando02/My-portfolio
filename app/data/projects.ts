@@ -655,5 +655,6 @@ export const projects: Project[] = [
       "Accessible design principles for interactive components",
     ],
     liveLink: "https://jehanfdo.vercel.app/",
+    githubLink: "https://github.com/Jehanfernando02/My-portfolio",
   },
 ]
