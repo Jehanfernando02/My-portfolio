@@ -130,8 +130,8 @@ const skillCategories = [
   { title: "Backend Development", skills: backendSkills, color: "from-purple-500 to-indigo-500" },
   { title: "Database & Storage", skills: databaseSkills, color: "from-indigo-600 to-purple-600" },
   { title: "DevOps & Tools", skills: devToolsSkills, color: "from-purple-600 to-indigo-600" },
-  { title: "Mobile Development", skills: mobileSkills, color: "from-indigo-500 to-purple-400" },
   { title: "AI & Machine Learning", skills: aiMLSkills, color: "from-pink-500 to-rose-500" },
+  { title: "Mobile Development", skills: mobileSkills, color: "from-indigo-500 to-purple-400" },
   { title: "API & Integration", skills: apiIntegrationSkills, color: "from-orange-500 to-amber-500" },
   { title: "Other Skills", skills: otherSkills, color: "from-purple-400 to-indigo-500" },
 ]
